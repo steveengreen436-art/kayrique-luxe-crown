@@ -1,459 +1,788 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kayrique-Luxe-Crown | Separate Hair Pages & Cart</title>
+  <title>KAYRIQUE LUXE HAIR VAULT | Premium Wigs & Extensions — Limpopo</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --midnight: #04091a;
-      --royal-blue: #0a193c;
-    }
-    html, body {
-      max-width: 100%;
-      overflow-x: hidden;
+      --cream-white: #faf6f0;
+      --warm-beige: #efe6d8;
+      --sand-beige: #e4d6c3;
+      --light-brown: #a47148;
+      --caramel-brown: #8b5a2b;
+      --espresso-ink: #2b1d14;
+      --muted-brown: #6b5344;
     }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background: radial-gradient(circle at top center, #0c2154 0%, #04091a 55%, #02050f 100%);
-      color: #f8fafc;
-      min-height: 100vh;
+      background-color: var(--cream-white);
+      color: var(--espresso-ink);
+      overflow-x: hidden;
+      padding-bottom: 76px;
     }
-    .font-royal { font-family: 'Cinzel', serif; }
-    .font-script { font-family: 'Cormorant Garamond', serif; }
-    .gold-text {
-      background: linear-gradient(135deg, #fef9c3 0%, #facc15 45%, #d97706 100%);
+    @media (min-width: 768px) {
+      body { padding-bottom: 0; }
+    }
+    .font-luxury {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    .brown-gradient-text {
+      background: linear-gradient(135deg, #6f4524 0%, #a47148 55%, #c59b6d 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .gold-foil-btn {
-      background: linear-gradient(135deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
-      color: #04091a;
-      box-shadow: 0 10px 28px -6px rgba(234, 179, 8, 0.45);
+    .luxe-btn {
+      background: linear-gradient(135deg, #a47148 0%, #8b5a2b 100%);
+      color: #fffdf9;
     }
-    .royal-glass {
-      background: rgba(10, 24, 58, 0.75);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(250, 204, 21, 0.28);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+    .luxe-btn:hover {
+      background: linear-gradient(135deg, #8b5a2b 0%, #6f4524 100%);
     }
-    .page-view { display: none; }
-    .page-view.active { display: block; animation: fadeInPage 0.25s ease-out; }
-    @keyframes fadeInPage {
-      from { opacity: 0; transform: translateY(6px); }
-      to { opacity: 1; transform: translateY(0); }
+    .glass-luxe {
+      background: #efe6d8;
+      border: 1px solid #d7c3a8;
+      box-shadow: 0 14px 32px -12px rgba(107, 83, 68, 0.16);
     }
-    .hair-silhouette { transition: all 0.35s ease; }
+    .cream-card {
+      background: #fffdf9;
+      border: 1px solid #dfd0bc;
+    }
+    .hair-strand {
+      transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .vault-page { display: none; }
+    .vault-page.active { display: block; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #efe6d8; }
+    ::-webkit-scrollbar-thumb { background: #b58963; border-radius: 999px; }
   </style>
 </head>
-<body class="antialiased selection:bg-yellow-400 selection:text-slate-950">
+<body class="antialiased selection:bg-[#d8c3a5] selection:text-[#2b1d14]">
 
-  <!-- Top VIP Ribbon -->
-  <div class="bg-gradient-to-r from-[#061230] via-[#132c6b] to-[#061230] border-b border-yellow-400/30 text-yellow-200 text-[10px] sm:text-xs py-2 px-3 text-center tracking-wide">
-    👑 <strong>KAYRIQUE-LUXE-CROWN</strong> • Dedicated Pages for Human, Brazilian, Indian & Synthetic Hair + Full Cart
+  <!-- Top Announcement Bar -->
+  <div class="bg-[#e4d6c3] border-b border-[#cfb99d] text-[#3d291c] text-[11px] sm:text-xs py-2 px-4 text-center relative z-50 font-medium tracking-wide">
+    ✨ LIMPOPO’S PREMIER HAIR VAULT • Nationwide Courier & Same-Day Polokwane / Tzaneen / Giyani / Thohoyandou Dispatch • Host: <strong>Kensani Mathebula</strong>
   </div>
 
-  <!-- Sticky Navigation Header -->
-  <header class="sticky top-0 z-50 bg-[#04091a]/95 backdrop-blur-xl border-b border-yellow-400/20">
-    <div class="max-w-7xl mx-auto px-3 sm:px-4 py-3 flex items-center justify-between gap-2">
-      <button onclick="navigateTo('home')" class="flex items-center gap-2.5 text-left min-w-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 shrink-0 rounded-full bg-gradient-to-tr from-yellow-300 via-amber-500 to-yellow-200 p-[2px]">
-          <div class="w-full h-full bg-[#06112b] rounded-full flex items-center justify-center font-royal font-extrabold text-sm sm:text-lg text-yellow-300">
-            KL
+  <!-- Sticky Storefront Navigation (Nykaa / Amazon Multi-Page Redirects) -->
+  <nav class="sticky top-0 z-50 bg-[#faf6f0]/95 backdrop-blur-xl border-b border-[#d7c3a8]">
+    <div class="max-w-7xl mx-auto px-4 py-3.5 flex items-center justify-between gap-2">
+      <button onclick="redirectToStorePage('home')" class="flex items-center gap-3 shrink-0 text-left">
+        <div class="w-10 h-10 rounded-full bg-[#a47148] p-[2px] shadow-sm">
+          <div class="w-full h-full bg-[#fffdf9] rounded-full flex items-center justify-center font-luxury font-bold text-xl text-[#8b5a2b]">
+            K
           </div>
         </div>
-        <div class="min-w-0">
-          <span class="font-royal text-xs sm:text-lg font-bold tracking-[0.08em] gold-text block leading-tight truncate">KAYRIQUE-LUXE-CROWN</span>
-          <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.2em] text-blue-200/80 font-semibold block truncate">Kayrique Crown Atelier</span>
+        <div>
+          <span class="font-luxury text-xl sm:text-2xl font-bold tracking-[0.14em] brown-gradient-text block leading-none">KAYRIQUE</span>
+          <span class="text-[9px] uppercase tracking-[0.28em] text-[#6b5344] font-semibold">Luxe Hair Vault • Limpopo</span>
         </div>
       </button>
 
-      <!-- Desktop Page Links -->
-      <nav class="hidden lg:flex items-center gap-1.5 text-xs font-bold">
-        <button data-nav="home" onclick="navigateTo('home')" class="nav-pill px-3.5 py-2 rounded-xl text-blue-100 hover:text-yellow-300 transition">Home</button>
-        <button data-nav="human-hair" onclick="navigateTo('human-hair')" class="nav-pill px-3.5 py-2 rounded-xl text-blue-100 hover:text-yellow-300 transition">Human Hair</button>
-        <button data-nav="brazilian-hair" onclick="navigateTo('brazilian-hair')" class="nav-pill px-3.5 py-2 rounded-xl text-blue-100 hover:text-yellow-300 transition">Brazilian Hair</button>
-        <button data-nav="indian-hair" onclick="navigateTo('indian-hair')" class="nav-pill px-3.5 py-2 rounded-xl text-blue-100 hover:text-yellow-300 transition">Indian Hair</button>
-        <button data-nav="synthetic-hair" onclick="navigateTo('synthetic-hair')" class="nav-pill px-3.5 py-2 rounded-xl text-blue-100 hover:text-yellow-300 transition">Synthetic Hair</button>
-      </nav>
+      <!-- Desktop Separate Page Redirect Links -->
+      <div class="hidden xl:flex items-center gap-5 text-xs uppercase tracking-widest font-bold text-[#4a3525]">
+        <a href="?page=home" onclick="handlePageLinkClick(event, 'home')" data-page-link="home" class="store-nav-link hover:text-[#8b5a2b] transition">Home</a>
+        <a href="?page=human-hair" onclick="handlePageLinkClick(event, 'human-hair')" data-page-link="human-hair" class="store-nav-link hover:text-[#8b5a2b] transition">Human Hair</a>
+        <a href="?page=brazilian-hair" onclick="handlePageLinkClick(event, 'brazilian-hair')" data-page-link="brazilian-hair" class="store-nav-link hover:text-[#8b5a2b] transition">Brazilian Hair</a>
+        <a href="?page=indian-hair" onclick="handlePageLinkClick(event, 'indian-hair')" data-page-link="indian-hair" class="store-nav-link hover:text-[#8b5a2b] transition">Indian Hair</a>
+        <a href="?page=synthetic-hair" onclick="handlePageLinkClick(event, 'synthetic-hair')" data-page-link="synthetic-hair" class="store-nav-link hover:text-[#8b5a2b] transition">Synthetic Hair</a>
+        <a href="?page=cart" onclick="handlePageLinkClick(event, 'cart')" data-page-link="cart" class="store-nav-link hover:text-[#8b5a2b] transition">Cart</a>
+      </div>
 
-      <!-- Quick Action & Cart Page Button -->
-      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-        <a href="tel:+231770209652" class="bg-blue-950/90 hover:bg-yellow-400 hover:text-slate-950 border border-yellow-400/40 text-yellow-300 text-xs font-bold px-2.5 sm:px-3 py-2 rounded-full transition">
-          📞 <span class="hidden sm:inline">Call</span>
+      <!-- Direct Call, WhatsApp & Cart Redirect -->
+      <div class="flex items-center gap-2">
+        <a href="tel:+27672540468" title="Call Kensani Mathebula" class="bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#3d291c] text-xs font-bold px-3 py-2.5 rounded-full flex items-center gap-1.5 transition">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+          <span class="hidden sm:inline">+27 67 254 0468</span>
         </a>
-        <a id="header-wa-link" href="https://wa.me/231770209652?text=Hello%20Kayrique-Luxe-Crown!%20I%20would%20like%20to%20inquire%20about%20your%20hair%20collections." target="_blank" rel="noopener" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-extrabold px-2.5 sm:px-3 py-2 rounded-full transition">
-          💬 <span class="hidden sm:inline">WhatsApp</span>
+
+        <a href="https://wa.me/27672540468?text=Dumela%20%2F%20Avuxeni%20Kensani%20at%20Kayrique%20Luxe%20Hair%20Vault!%20I%20would%20like%20to%20inquire%20about%20your%20wigs%20and%20extensions." target="_blank" rel="noopener" class="bg-[#8b5a2b] hover:bg-[#6f4524] text-[#fffdf9] text-xs font-extrabold px-3.5 py-2.5 rounded-full shadow flex items-center gap-1.5 transition">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.03 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.48 1.34 5L2 22l5.15-1.35c1.48.81 3.16 1.24 4.88 1.24h.01c5.52 0 10-4.48 10-10 0-2.67-1.04-5.18-2.93-7.07A9.93 9.93 0 0012.03 2zm5.82 14.28c-.25.7-1.44 1.34-1.99 1.42-.51.08-1.15.11-1.86-.12-.43-.14-.98-.32-1.69-.63-2.98-1.29-4.92-4.29-5.07-4.49-.15-.2-1.21-1.61-1.21-3.07 0-1.46.76-2.18 1.03-2.48.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.33-.3.5-.15.18-.31.4-.45.53-.15.15-.3.31-.13.61.18.3.78 1.29 1.68 2.09 1.15 1.03 2.13 1.35 2.43 1.5.3.15.48.13.65-.08.18-.2.75-.88.95-1.18.2-.3.4-.25.67-.15.28.1 1.75.83 2.05.98.3.15.5.22.57.35.08.12.08.72-.17 1.42z"/></svg>
+          <span class="hidden md:inline">WhatsApp</span>
         </a>
-        <button data-nav="cart" onclick="navigateTo('cart')" class="gold-foil-btn text-xs font-extrabold px-3.5 py-2 rounded-full flex items-center gap-1.5 transition transform active:scale-95">
-          <span>👜 Cart</span>
-          <span class="cart-badge bg-slate-950 text-yellow-300 px-1.5 py-0.5 rounded-full text-[10px]">0</span>
+
+        <button onclick="redirectToStorePage('cart')" class="relative luxe-btn text-xs font-extrabold px-3.5 py-2.5 rounded-full shadow flex items-center gap-1.5">
+          <span>🛍️</span>
+          <span id="nav-bag-count">0</span>
         </button>
       </div>
     </div>
 
-    <!-- Mobile / Tablet Page Switcher Bar (All Separate Pages Accessible in 1 Tap) -->
-    <div class="lg:hidden border-t border-yellow-400/15 bg-[#06112b]/95 px-2 py-1.5 flex items-center gap-1 overflow-x-auto text-[11px] font-bold">
-      <button data-nav="home" onclick="navigateTo('home')" class="nav-pill px-2.5 py-1.5 rounded-lg text-blue-100 whitespace-nowrap">Home</button>
-      <button data-nav="human-hair" onclick="navigateTo('human-hair')" class="nav-pill px-2.5 py-1.5 rounded-lg text-blue-100 whitespace-nowrap">Human Hair</button>
-      <button data-nav="brazilian-hair" onclick="navigateTo('brazilian-hair')" class="nav-pill px-2.5 py-1.5 rounded-lg text-blue-100 whitespace-nowrap">Brazilian Hair</button>
-      <button data-nav="indian-hair" onclick="navigateTo('indian-hair')" class="nav-pill px-2.5 py-1.5 rounded-lg text-blue-100 whitespace-nowrap">Indian Hair</button>
-      <button data-nav="synthetic-hair" onclick="navigateTo('synthetic-hair')" class="nav-pill px-2.5 py-1.5 rounded-lg text-blue-100 whitespace-nowrap">Synthetic Hair</button>
-      <button data-nav="cart" onclick="navigateTo('cart')" class="nav-pill px-2.5 py-1.5 rounded-lg text-yellow-300 whitespace-nowrap ml-auto">Cart (<span class="cart-badge">0</span>)</button>
+    <!-- Mobile / Tablet Page Redirect Strip -->
+    <div class="xl:hidden border-t border-[#d7c3a8] bg-[#efe6d8] px-2 py-1.5 flex items-center gap-1.5 overflow-x-auto text-[11px] font-bold">
+      <a href="?page=home" onclick="handlePageLinkClick(event, 'home')" data-page-link="home" class="store-nav-link px-2.5 py-1 rounded-lg bg-[#fffdf9] text-[#3d291c] whitespace-nowrap">Home</a>
+      <a href="?page=human-hair" onclick="handlePageLinkClick(event, 'human-hair')" data-page-link="human-hair" class="store-nav-link px-2.5 py-1 rounded-lg bg-[#fffdf9] text-[#3d291c] whitespace-nowrap">Human Hair</a>
+      <a href="?page=brazilian-hair" onclick="handlePageLinkClick(event, 'brazilian-hair')" data-page-link="brazilian-hair" class="store-nav-link px-2.5 py-1 rounded-lg bg-[#fffdf9] text-[#3d291c] whitespace-nowrap">Brazilian Hair</a>
+      <a href="?page=indian-hair" onclick="handlePageLinkClick(event, 'indian-hair')" data-page-link="indian-hair" class="store-nav-link px-2.5 py-1 rounded-lg bg-[#fffdf9] text-[#3d291c] whitespace-nowrap">Indian Hair</a>
+      <a href="?page=synthetic-hair" onclick="handlePageLinkClick(event, 'synthetic-hair')" data-page-link="synthetic-hair" class="store-nav-link px-2.5 py-1 rounded-lg bg-[#fffdf9] text-[#3d291c] whitespace-nowrap">Synthetic Hair</a>
+      <a href="?page=cart" onclick="handlePageLinkClick(event, 'cart')" data-page-link="cart" class="store-nav-link px-2.5 py-1 rounded-lg bg-[#a47148] text-[#fffdf9] whitespace-nowrap ml-auto">Cart (<span class="mob-cart-qty">0</span>)</a>
     </div>
-  </header>
+  </nav>
 
-  <main class="max-w-7xl mx-auto px-3 sm:px-4 py-8 sm:py-10">
+  <!-- ==================== STOREFRONT PAGE: HOME (?page=home) ==================== -->
+  <div id="vault-page-home" class="vault-page active relative z-10">
+    <!-- Hero Section -->
+    <header class="relative pt-12 pb-16 px-4 overflow-hidden">
+      <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 bg-[#efe6d8] border border-[#cfb99d] px-4 py-1.5 rounded-full text-xs text-[#5c3d28] font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-[#8b5a2b]"></span>
+            <span>RAW SINGLE-DONOR • HD LACE • SYNTHETIC & BLENDS (R45 – R14,000+)</span>
+          </div>
 
-    <!-- ==================== PAGE 1: HOME ==================== -->
-    <section id="page-home" class="page-view active">
-      <div class="royal-glass rounded-3xl p-6 sm:p-10 text-center lg:text-left grid lg:grid-cols-12 gap-8 items-center mb-10">
-        <div class="lg:col-span-7 space-y-4">
-          <span class="inline-block bg-yellow-400/15 border border-yellow-400/40 text-yellow-200 text-xs font-bold px-4 py-1.5 rounded-full">
-            ✨ KAYRIQUE-LUXE-CROWN • DEDICATED CATEGORY PAGES
-          </span>
-          <h1 class="font-royal text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
-            <span class="gold-text block">LUXURY CROWNS</span>
-            <span class="text-white block text-2xl sm:text-4xl mt-1">FOR EVERY OCCASION</span>
+          <h1 class="font-luxury text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.03] mb-5 text-[#2b1d14]">
+            Crown Yourself in <span class="brown-gradient-text italic">Kayrique</span> Luxury.
           </h1>
-          <p class="font-script italic text-2xl sm:text-3xl text-yellow-200">
-            Choose a dedicated hair page below to use its length measuring scale, pick your color, and add units to your Cart page.
+
+          <p class="text-[#5c4636] text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed mb-7">
+            From everyday <strong>R45 weave packs</strong> and glueless wear-and-go units to double-drawn <strong>Vietnamese Bone Straight</strong> & <strong>40" Bussdown Full Lace</strong> masterpieces. Curated in <strong>Limpopo</strong> by <strong>Kensani Mathebula</strong>.
           </p>
-          <div class="flex flex-wrap gap-3 justify-center lg:justify-start pt-2">
-            <button onclick="navigateTo('human-hair')" class="gold-foil-btn font-extrabold px-6 py-3.5 rounded-2xl text-xs sm:text-sm uppercase tracking-wider">
-              Explore Human Hair Page →
+
+          <!-- Direct Contact Strip -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-7">
+            <a href="tel:+27672540468" class="inline-flex items-center gap-2 bg-[#fffdf9] hover:bg-[#efe6d8] border border-[#cfb99d] px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold text-[#3d291c] transition">
+              <span>📞</span> Call Kensani: +27 67 254 0468
+            </a>
+            <a href="https://wa.me/27672540468?text=Hi%20Kensani!%20I'm%20browsing%20the%20Kayrique%20Luxe%20Hair%20Vault." target="_blank" rel="noopener" class="inline-flex items-center gap-2 luxe-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-extrabold transition">
+              <span>💬</span> WhatsApp Direct
+            </a>
+          </div>
+
+          <!-- Separate Page Redirect Buttons -->
+          <div class="flex flex-wrap gap-2.5 justify-center lg:justify-start">
+            <button onclick="redirectToStorePage('human-hair')" class="luxe-btn font-extrabold px-5 py-3.5 rounded-2xl shadow transition text-xs sm:text-sm">
+              Human Hair Page →
             </button>
-            <button onclick="navigateTo('cart')" class="bg-blue-950 hover:bg-blue-900 border border-yellow-400/45 text-yellow-200 font-extrabold px-6 py-3.5 rounded-2xl text-xs sm:text-sm">
-              👜 Open Cart Page (<span class="cart-badge">0</span>)
+            <button onclick="redirectToStorePage('brazilian-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] font-bold px-5 py-3.5 rounded-2xl transition text-xs sm:text-sm">
+              Brazilian Hair Page →
+            </button>
+            <button onclick="redirectToStorePage('indian-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] font-bold px-5 py-3.5 rounded-2xl transition text-xs sm:text-sm">
+              Indian Hair Page →
+            </button>
+            <button onclick="redirectToStorePage('synthetic-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] font-bold px-5 py-3.5 rounded-2xl transition text-xs sm:text-sm">
+              Synthetic Hair Page →
+            </button>
+            <button onclick="redirectToStorePage('cart')" class="bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#8b5a2b] text-[#6f4524] font-extrabold px-5 py-3.5 rounded-2xl transition text-xs sm:text-sm">
+              🛍️ Cart Page (<span class="mob-cart-qty">0</span>)
             </button>
           </div>
         </div>
 
-        <div class="lg:col-span-5 bg-[#050d24] border border-yellow-400/25 rounded-2xl p-5 space-y-3 text-left">
-          <p class="text-xs uppercase tracking-widest text-yellow-300 font-bold">Separate Pages Included</p>
-          <div class="space-y-2 text-xs">
-            <button onclick="navigateTo('human-hair')" class="w-full flex items-center justify-between bg-blue-950/80 hover:bg-blue-900 p-3 rounded-xl border border-white/10 transition">
-              <span><strong>1. Human Hair Page</strong> — Inch scale, colors & prices</span>
-              <span class="text-yellow-300 font-bold">Open →</span>
-            </button>
-            <button onclick="navigateTo('brazilian-hair')" class="w-full flex items-center justify-between bg-blue-950/80 hover:bg-blue-900 p-3 rounded-xl border border-white/10 transition">
-              <span><strong>2. Brazilian Hair Page</strong> — Inch scale, colors & prices</span>
-              <span class="text-yellow-300 font-bold">Open →</span>
-            </button>
-            <button onclick="navigateTo('indian-hair')" class="w-full flex items-center justify-between bg-blue-950/80 hover:bg-blue-900 p-3 rounded-xl border border-white/10 transition">
-              <span><strong>3. Indian Hair Page</strong> — Inch scale, colors & prices</span>
-              <span class="text-yellow-300 font-bold">Open →</span>
-            </button>
-            <button onclick="navigateTo('synthetic-hair')" class="w-full flex items-center justify-between bg-blue-950/80 hover:bg-blue-900 p-3 rounded-xl border border-white/10 transition">
-              <span><strong>4. Synthetic Hair Page</strong> — Inch scale, colors & prices</span>
-              <span class="text-yellow-300 font-bold">Open →</span>
-            </button>
-            <button onclick="navigateTo('cart')" class="w-full flex items-center justify-between bg-emerald-500/15 hover:bg-emerald-500/25 p-3 rounded-xl border border-emerald-400/40 transition">
-              <span class="text-emerald-200"><strong>5. Cart Page</strong> — View all added items & checkout</span>
-              <span class="text-emerald-300 font-extrabold">View Cart →</span>
-            </button>
+        <!-- Right Interactive Live Wig Length & Texture Visualizer -->
+        <div id="studio" class="lg:col-span-5">
+          <div class="glass-luxe rounded-[2rem] p-6 relative">
+            <div class="flex items-center justify-between border-b border-[#d7c3a8] pb-3 mb-4">
+              <div>
+                <span class="text-[10px] uppercase tracking-[0.25em] text-[#8b5a2b] font-bold">Interactive Wig Studio</span>
+                <h2 class="font-luxury text-2xl font-bold text-[#2b1d14]">Live Length & Price Previewer</h2>
+              </div>
+              <span id="studio-badge" class="bg-[#fffdf9] border border-[#cfb99d] text-[#6f4524] text-[11px] font-bold px-3 py-1 rounded-full">
+                HUMAN HAIR
+              </span>
+            </div>
+
+            <!-- Interactive Silhouette Canvas -->
+            <div class="cream-card rounded-2xl p-4 grid grid-cols-12 gap-3 items-center mb-4">
+              <div class="col-span-5 flex justify-center">
+                <svg viewBox="0 0 140 230" class="w-32 h-48">
+                  <circle cx="70" cy="42" r="22" fill="#efe6d8" stroke="#8b5a2b" stroke-width="1.5"/>
+                  <path d="M35 95 Q70 78 105 95 L114 145 L26 145 Z" fill="#e4d6c3" stroke="#b58963" stroke-width="1"/>
+                  <path id="svg-hair-shape" class="hair-strand" d="M46 38 Q70 10 94 38 L104 135 Q70 145 36 135 Z" fill="url(#hairGrad)" opacity="0.95"/>
+                  <line x1="120" y1="64" x2="128" y2="64" stroke="#8b5a2b" stroke-width="1"/>
+                  <text x="131" y="67" fill="#6b5344" font-size="7">8"</text>
+                  <line x1="120" y1="98" x2="128" y2="98" stroke="#8b5a2b" stroke-width="1"/>
+                  <text x="131" y="101" fill="#6b5344" font-size="7">14"</text>
+                  <line x1="120" y1="138" x2="128" y2="138" stroke="#8b5a2b" stroke-width="1"/>
+                  <text x="131" y="141" fill="#6b5344" font-size="7">20"</text>
+                  <line x1="120" y1="178" x2="128" y2="178" stroke="#8b5a2b" stroke-width="1"/>
+                  <text x="131" y="181" fill="#6b5344" font-size="7">28"</text>
+                  <line x1="120" y1="215" x2="128" y2="215" stroke="#6f4524" stroke-width="1.2"/>
+                  <text x="130" y="218" fill="#6f4524" font-size="7" font-weight="bold">38"</text>
+                  <defs>
+                    <linearGradient id="hairGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#5c3d28"/>
+                      <stop offset="55%" stop-color="#3b2618"/>
+                      <stop offset="100%" stop-color="#a47148"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+
+              <div class="col-span-7 space-y-2.5 text-left">
+                <div>
+                  <p class="text-[10px] uppercase tracking-wider text-[#6b5344]">Selected Silhouette</p>
+                  <p id="studio-title" class="font-luxury text-xl font-bold text-[#2b1d14] leading-tight">20" Body Wave 13x4 Lace</p>
+                </div>
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                  <div class="bg-[#efe6d8] p-2 rounded-lg">
+                    <span class="text-[#6b5344] block text-[10px]">Fall Point</span>
+                    <strong id="studio-fall" class="text-[#2b1d14]">Mid-Back</strong>
+                  </div>
+                  <div class="bg-[#efe6d8] p-2 rounded-lg">
+                    <span class="text-[#6b5344] block text-[10px]">Density</span>
+                    <strong id="studio-density" class="text-[#8b5a2b]">200% Luxe</strong>
+                  </div>
+                </div>
+                <div class="pt-1">
+                  <span class="text-[10px] uppercase text-[#6b5344] block">Estimated Investment</span>
+                  <span id="studio-price" class="font-luxury text-3xl font-bold brown-gradient-text">R3,450</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="grid grid-cols-2 gap-2 bg-[#fffdf9] p-1 rounded-xl border border-[#d7c3a8]">
+                <button onclick="setStudioGrade('human')" id="grade-human" class="py-2 rounded-lg text-xs font-extrabold bg-[#8b5a2b] text-[#fffdf9] transition">100% Human Hair</button>
+                <button onclick="setStudioGrade('synthetic')" id="grade-synthetic" class="py-2 rounded-lg text-xs font-bold text-[#5c4636] hover:text-[#2b1d14] transition">Synthetic / Blend</button>
+              </div>
+
+              <div>
+                <label class="text-[11px] font-bold text-[#4a3525] flex justify-between mb-1">
+                  <span>Choose Inch Length:</span>
+                  <span id="studio-inch-label" class="text-[#8b5a2b]">20 Inches</span>
+                </label>
+                <div class="grid grid-cols-5 gap-1.5">
+                  <button onclick="setStudioLength(8)" class="len-btn bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#d7c3a8] py-1.5 rounded-lg text-xs font-bold text-[#2b1d14]">8" Bob</button>
+                  <button onclick="setStudioLength(14)" class="len-btn bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#d7c3a8] py-1.5 rounded-lg text-xs font-bold text-[#2b1d14]">14" Lob</button>
+                  <button onclick="setStudioLength(20)" class="len-btn bg-[#8b5a2b] text-[#fffdf9] py-1.5 rounded-lg text-xs font-extrabold">20"</button>
+                  <button onclick="setStudioLength(28)" class="len-btn bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#d7c3a8] py-1.5 rounded-lg text-xs font-bold text-[#2b1d14]">28"</button>
+                  <button onclick="setStudioLength(38)" class="len-btn bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#d7c3a8] py-1.5 rounded-lg text-xs font-bold text-[#2b1d14]">38" Buss</button>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1.5">
+                <button onclick="setStudioTexture('Bone Straight')" class="tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c] font-semibold">Bone Straight</button>
+                <button onclick="setStudioTexture('Body Wave')" class="tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#8b5a2b] text-[#fffdf9] font-bold">Body Wave</button>
+                <button onclick="setStudioTexture('Deep Wave')" class="tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c] font-semibold">Deep Wave</button>
+                <button onclick="setStudioTexture('Afro Kinky 4C')" class="tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c] font-semibold">Afro Kinky 4C</button>
+                <button onclick="setStudioTexture('Burmese Curly')" class="tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c] font-semibold">Burmese Curly</button>
+              </div>
+
+              <button onclick="addStudioBuildToBag()" class="w-full py-3.5 rounded-xl luxe-btn font-extrabold text-xs uppercase tracking-wider shadow transition transform active:scale-95">
+                + Add Custom Studio Wig to Cart Page
+              </button>
+            </div>
           </div>
         </div>
       </div>
+    </header>
 
-      <!-- 4 Dedicated Page Cards -->
-      <div id="home-category-cards" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    <!-- FULL INTERACTIVE PRICE VAULT -->
+    <section id="catalog" class="max-w-7xl mx-auto px-4 pt-12 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#8b5a2b] font-bold">Complete Price Guide (ZAR)</span>
+        <h2 class="font-luxury text-4xl sm:text-5xl font-bold text-[#2b1d14] mt-2">The Kayrique Hair Vault</h2>
+        <p class="text-[#5c4636] text-sm mt-2">
+          Search any wig construction, bundle pack, hair origin, texture, or trending cut. Tap <strong>+ Add to Cart</strong> on any item to redirect to your Cart page.
+        </p>
+      </div>
+
+      <div class="glass-luxe rounded-2xl p-4 mb-8 space-y-4">
+        <div class="flex flex-col md:flex-row gap-3">
+          <input type="text" id="catalog-search" oninput="renderCatalog()" placeholder="🔍 Search e.g. Bone Straight, 13x6, Burmese, Ponytail, Braided, Vietnamese, Bob..." class="flex-1 bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3 text-sm text-[#2b1d14] placeholder-[#8c7361] focus:outline-none focus:border-[#8b5a2b]">
+          <div class="flex gap-2">
+            <button onclick="setFiberFilter('all')" id="fib-all" class="px-4 py-2.5 rounded-xl text-xs font-extrabold bg-[#8b5a2b] text-[#fffdf9]">All Hair</button>
+            <button onclick="setFiberFilter('human')" id="fib-human" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c]">Human Hair</button>
+            <button onclick="setFiberFilter('synthetic')" id="fib-synthetic" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c]">Synthetic / Blend</button>
+          </div>
+        </div>
+        <div class="flex gap-2 overflow-x-auto pb-1" id="category-tabs"></div>
+      </div>
+
+      <div id="catalog-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     </section>
 
-    <!-- ==================== PAGE 2: HUMAN HAIR ==================== -->
-    <section id="page-human-hair" class="page-view"></section>
+    <!-- SMART BUNDLE & LACE CALCULATOR -->
+    <section id="bundle-calc" class="max-w-7xl mx-auto px-4 pt-16 relative z-10">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#8b5a2b] font-bold">Smart Sew-In & Custom Wig Planner</span>
+        <h2 class="font-luxury text-4xl font-bold text-[#2b1d14] mt-2">Bundle & Lace Calculator</h2>
+        <p class="text-[#5c4636] text-sm mt-2">Not sure how many bundles you need for a full head? Select your desired length, origin, and lace top below.</p>
+      </div>
 
-    <!-- ==================== PAGE 3: BRAZILIAN HAIR ==================== -->
-    <section id="page-brazilian-hair" class="page-view"></section>
+      <div class="glass-luxe rounded-3xl p-6 sm:p-8 grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-7 space-y-5">
+          <div>
+            <label class="text-xs font-bold uppercase tracking-wider text-[#6f4524] block mb-2">1. Select Hair Origin / Grade</label>
+            <select id="calc-origin" onchange="updateBundleCalc()" class="w-full bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3.5 text-sm text-[#2b1d14] font-semibold focus:outline-none">
+              <option value="95">Synthetic Weave Bundles (per pack) — from R45–R120</option>
+              <option value="750">Human Hair Blend Bundles (3–4 bundles) — from R450–R1,100</option>
+              <option value="2400" selected>Brazilian Virgin Hair (3 bundles + closure) — from R1,500–R5,500</option>
+              <option value="2800">Peruvian / Malaysian Hair — from R1,700–R6,500</option>
+              <option value="3900">Burmese Curly / Deep Texture — from R2,500–R8,500</option>
+              <option value="5200">Vietnamese Double-Drawn — from R3,500–R11,000+</option>
+              <option value="6800">Raw Single-Donor Unprocessed — from R4,500–R14,000+</option>
+            </select>
+          </div>
 
-    <!-- ==================== PAGE 4: INDIAN HAIR ==================== -->
-    <section id="page-indian-hair" class="page-view"></section>
-
-    <!-- ==================== PAGE 5: SYNTHETIC HAIR ==================== -->
-    <section id="page-synthetic-hair" class="page-view"></section>
-
-    <!-- ==================== PAGE 6: CART PAGE ==================== -->
-    <section id="page-cart" class="page-view">
-      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-yellow-300 font-bold">Dedicated Cart Page</span>
-          <h2 class="font-royal text-3xl sm:text-4xl font-bold text-white">Your Shopping Cart</h2>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs font-bold uppercase tracking-wider text-[#6f4524] block mb-2">2. Target Hair Length</label>
+              <select id="calc-length" onchange="updateBundleCalc()" class="w-full bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3.5 text-sm text-[#2b1d14] font-semibold focus:outline-none">
+                <option value="10-14">10" – 14" (Short / Bob)</option>
+                <option value="16-22" selected>16" – 22" (Medium / Mid-Back)</option>
+                <option value="24-30">24" – 30" (Long / Waist)</option>
+                <option value="32-40">32" – 40" (Extra-Long Bussdown)</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-bold uppercase tracking-wider text-[#6f4524] block mb-2">3. Lace Top / Finish</label>
+              <select id="calc-lace" onchange="updateBundleCalc()" class="w-full bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3.5 text-sm text-[#2b1d14] font-semibold focus:outline-none">
+                <option value="0">Bundles Only (No Lace)</option>
+                <option value="450" selected>4x4 / 5x5 HD Closure (+R450)</option>
+                <option value="750">6x6 / 7x7 Deep Part Closure (+R750)</option>
+                <option value="1100">13x4 / 13x6 Ear-to-Ear Frontal (+R1,100)</option>
+              </select>
+            </div>
+          </div>
         </div>
-        <div class="flex gap-2">
-          <button onclick="navigateTo('human-hair')" class="bg-blue-950 hover:bg-blue-900 border border-yellow-400/35 text-yellow-200 text-xs font-bold px-4 py-2.5 rounded-xl">
-            + Add More Hair
-          </button>
-          <button onclick="clearCart()" class="bg-rose-950/70 hover:bg-rose-900 border border-rose-400/30 text-rose-200 text-xs font-bold px-4 py-2.5 rounded-xl">
-            Clear Cart
+
+        <div class="lg:col-span-5 cream-card rounded-2xl p-6 text-center">
+          <span class="text-[11px] uppercase tracking-widest text-[#8b5a2b] font-bold">Recommended Full-Head Formula</span>
+          <h3 id="bc-bundles" class="font-luxury text-3xl font-bold text-[#2b1d14] mt-2">3 Bundles + 4x4 Closure</h3>
+          <p id="bc-advice" class="text-xs text-[#5c4636] mt-2 leading-relaxed">
+            For 16"–22" lengths, 3 full bundles give a lush, natural volume from root to tip without thin ends.
+          </p>
+          <div class="my-5 py-3 border-y border-[#e4d6c3]">
+            <span class="text-xs text-[#6b5344] block">Estimated Package Total</span>
+            <span id="bc-price" class="font-luxury text-4xl font-bold brown-gradient-text">R2,850</span>
+          </div>
+          <button onclick="addBundlePackageToBag()" class="w-full py-3.5 rounded-xl luxe-btn font-extrabold text-xs uppercase tracking-wider shadow transition transform active:scale-95">
+            + Add Custom Bundle Deal to Cart
           </button>
         </div>
       </div>
+    </section>
 
-      <div class="royal-glass rounded-3xl p-5 sm:p-8 grid lg:grid-cols-12 gap-8">
-        <!-- Cart Contents List -->
-        <div class="lg:col-span-7 space-y-4">
-          <h3 class="font-royal text-lg font-bold text-yellow-300 border-b border-yellow-400/20 pb-3">
-            Added Items (<span class="cart-badge">0</span>)
-          </h3>
-          <div id="cart-page-items" class="space-y-3"></div>
+    <!-- WIG CAP SIZER -->
+    <section id="cap-sizer" class="max-w-7xl mx-auto px-4 pt-16 relative z-10">
+      <div class="glass-luxe rounded-3xl p-6 sm:p-8 grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-6">
+          <span class="text-xs uppercase tracking-[0.25em] text-[#8b5a2b] font-bold">Glueless Fit Guarantee</span>
+          <h2 class="font-luxury text-3xl sm:text-4xl font-bold text-[#2b1d14] mt-1">Interactive Wig Cap Sizer</h2>
+          <p class="text-[#5c4636] text-sm mt-2 mb-5">
+            Measure around your hairline (forehead, behind ears, to nape of neck) in centimeters and slide below so Kensani prepares your exact snug glueless fit:
+          </p>
+          <div class="cream-card p-5 rounded-2xl">
+            <div class="flex justify-between text-sm font-bold mb-2 text-[#2b1d14]">
+              <span>Head Circumference:</span>
+              <span id="cm-readout" class="text-[#8b5a2b] text-lg">55.5 cm (21.8")</span>
+            </div>
+            <input type="range" id="head-slider" min="51" max="61" step="0.5" value="55.5" oninput="updateCapSize()" class="w-full accent-[#8b5a2b] cursor-pointer">
+            <div class="flex justify-between text-[10px] text-[#6b5344] mt-1">
+              <span>51 cm (Petite)</span>
+              <span>55.5 cm (Standard)</span>
+              <span>61 cm (Large)</span>
+            </div>
+          </div>
         </div>
 
-        <!-- Cart Summary & Order Actions -->
-        <div class="lg:col-span-5 bg-[#050d24] border border-yellow-400/30 rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-6">
-          <div class="space-y-4">
-            <h3 class="font-royal text-xl font-bold text-yellow-300 border-b border-white/10 pb-3">Cart Summary</h3>
+        <div class="lg:col-span-6 cream-card rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div>
+            <span class="text-xs uppercase tracking-wider text-[#6b5344]">Your Exact Kayrique Cap Size</span>
+            <h3 id="cap-result-title" class="font-luxury text-3xl font-bold text-[#8b5a2b] mt-1">MEDIUM CAP (21.5" – 22")</h3>
+            <p id="cap-result-desc" class="text-xs text-[#5c4636] mt-1">Fits 90% of queens! Includes adjustable elastic security band + combs for 100% glueless wear.</p>
+          </div>
+          <span class="text-5xl">👑</span>
+        </div>
+      </div>
+    </section>
 
-            <div class="space-y-2">
-              <label class="block text-xs font-bold text-blue-200">Your Name (Optional)</label>
-              <input id="cart-customer-name" type="text" placeholder="Enter your name" class="w-full bg-[#091536] border border-yellow-400/25 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
+    <!-- LIMPOPO HUB & QUICK BAG PREVIEW -->
+    <section id="limpopo" class="max-w-7xl mx-auto px-4 pt-16 pb-16 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-8">
+        <div id="quote-bag-box" class="lg:col-span-7 glass-luxe rounded-3xl p-6 sm:p-8">
+          <div class="flex items-center justify-between border-b border-[#d7c3a8] pb-4 mb-5">
+            <div>
+              <span class="text-xs uppercase tracking-widest text-[#8b5a2b] font-bold">Direct Order to Kensani Mathebula</span>
+              <h2 class="font-luxury text-3xl font-bold text-[#2b1d14]">Your Kayrique Order Bag</h2>
             </div>
-
-            <div class="space-y-2">
-              <label class="block text-xs font-bold text-blue-200">Occasion / Notes</label>
-              <input id="cart-occasion-note" type="text" placeholder="e.g., Wedding, Date Night, Graduation, Birthday" class="w-full bg-[#091536] border border-yellow-400/25 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none focus:border-yellow-400">
-            </div>
-
-            <div class="border-t border-yellow-400/20 pt-4 space-y-2 text-sm">
-              <div class="flex justify-between text-blue-200">
-                <span>Total Quantity:</span>
-                <strong id="cart-total-qty" class="text-white">0</strong>
-              </div>
-              <div class="flex justify-between items-baseline pt-2">
-                <span class="text-xs uppercase tracking-wider text-yellow-200 font-extrabold">Cart Total:</span>
-                <span id="cart-grand-total" class="font-royal text-3xl font-extrabold gold-text">$0</span>
-              </div>
+            <div class="flex items-center gap-3">
+              <button onclick="redirectToStorePage('cart')" class="text-xs text-[#8b5a2b] hover:underline font-extrabold">Open Cart Page →</button>
+              <button onclick="clearBag()" class="text-xs text-[#9e3b24] hover:underline font-semibold">Clear Bag</button>
             </div>
           </div>
 
-          <div class="space-y-2.5">
-            <button onclick="checkoutCartOnWhatsApp()" class="w-full py-3.5 rounded-2xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm transition transform active:scale-95">
-              💬 Send Cart Order on WhatsApp
+          <div id="bag-items-list" class="space-y-3 min-h-[120px] mb-6"></div>
+
+          <div class="grid sm:grid-cols-2 gap-3 mb-4">
+            <input type="text" id="cust-name" placeholder="Your Full Name" class="bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3 text-sm text-[#2b1d14] focus:outline-none">
+            <select id="cust-town" onchange="renderBag()" class="bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3 text-sm text-[#2b1d14] font-semibold focus:outline-none">
+              <option value="Polokwane (Collection / Local Delivery)">📍 Limpopo — Polokwane</option>
+              <option value="Tzaneen">📍 Limpopo — Tzaneen</option>
+              <option value="Thohoyandou / Sibasa">📍 Limpopo — Thohoyandou / Sibasa</option>
+              <option value="Giyani">📍 Limpopo — Giyani</option>
+              <option value="Malamulele">📍 Limpopo — Malamulele</option>
+              <option value="Mokopane / Mahwelereng">📍 Limpopo — Mokopane</option>
+              <option value="Phalaborwa">📍 Limpopo — Phalaborwa</option>
+              <option value="Lephalale / Ellisras">📍 Limpopo — Lephalale</option>
+              <option value="Musina / Louis Trichardt (Makhado)">📍 Limpopo — Makhado / Musina</option>
+              <option value="Nationwide PAXI / Courier Guy">🚚 Outside Limpopo (PAXI / Courier Guy)</option>
+            </select>
+          </div>
+          <input type="text" id="cust-notes" placeholder="Optional: Preferred color (#1B, #99J, Ginger, 613), inch length, or pickup time..." class="w-full bg-[#fffdf9] border border-[#cfb99d] rounded-xl px-4 py-3 text-sm text-[#2b1d14] mb-5 focus:outline-none">
+
+          <div class="flex items-center justify-between cream-card p-4 rounded-2xl mb-5">
+            <div>
+              <span class="text-xs text-[#6b5344] block">Estimated Order Total</span>
+              <span class="text-[11px] text-[#8b5a2b] font-semibold">Confirm stock & final lace specs directly with Kensani</span>
+            </div>
+            <span id="bag-total" class="font-luxury text-3xl sm:text-4xl font-bold brown-gradient-text">R0</span>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-3">
+            <button onclick="checkoutWhatsApp()" class="py-4 px-5 rounded-2xl luxe-btn font-extrabold text-sm flex items-center justify-center gap-2 shadow transition">
+              <span>💬 Send Order via WhatsApp</span>
             </button>
-            <a href="tel:+231770209652" class="w-full py-3 rounded-2xl gold-foil-btn font-extrabold text-xs sm:text-sm flex items-center justify-center transition">
-              📞 Call to Order: +231 77 020 9652
+            <a href="tel:+27672540468" class="py-4 px-5 rounded-2xl bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] font-extrabold text-sm flex items-center justify-center gap-2 transition">
+              <span>📞 Call Kensani: +27 67 254 0468</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5 glass-luxe rounded-3xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <span class="text-xs uppercase tracking-[0.25em] text-[#8b5a2b] font-bold">Limpopo Hair Concierge</span>
+            <h3 class="font-luxury text-3xl font-bold text-[#2b1d14] mt-1">Kayrique Luxe Hair Vault</h3>
+            <p class="text-[#5c4636] text-sm mt-2 leading-relaxed">
+              Serving queens across <strong>Limpopo</strong> (Polokwane, Giyani, Tzaneen, Thohoyandou, Malamulele, Mokopane & surrounds) plus fast nationwide PAXI & Courier Guy delivery.
+            </p>
+
+            <div class="mt-5 space-y-3 text-xs">
+              <div class="cream-card p-3.5 rounded-xl flex items-center gap-3">
+                <span class="text-xl">👩🏾‍💼</span>
+                <div>
+                  <p class="text-[#6b5344]">Founder & Hair Specialist</p>
+                  <p class="font-bold text-[#2b1d14] text-sm">Kensani Mathebula</p>
+                </div>
+              </div>
+              <div class="cream-card p-3.5 rounded-xl flex items-center gap-3">
+                <span class="text-xl">📍</span>
+                <div>
+                  <p class="text-[#6b5344]">Region & Dispatch Hub</p>
+                  <p class="font-bold text-[#2b1d14] text-sm">Limpopo Province, South Africa</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-5 h-44 rounded-2xl overflow-hidden border border-[#cfb99d]">
+              <iframe
+                title="Kayrique Luxe Hair Vault Limpopo"
+                class="w-full h-full border-0"
+                loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=29.3800%2C-23.9500%2C29.5200%2C-23.8600&layer=mapnik&marker=-23.9045%2C29.4689">
+              </iframe>
+            </div>
+          </div>
+
+          <div class="mt-5 grid grid-cols-2 gap-2.5">
+            <a href="https://wa.me/27672540468?text=Hi%20Kensani!%20Please%20share%20your%20Limpopo%20collection%20location%20or%20delivery%20details." target="_blank" rel="noopener" class="py-3 rounded-xl luxe-btn text-xs font-extrabold text-center transition">
+              📌 Ask for Live Pin
+            </a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Limpopo+South+Africa" target="_blank" rel="noopener" class="py-3 rounded-xl bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] text-xs font-bold text-center transition">
+              🗺️ Open Google Maps
             </a>
           </div>
         </div>
       </div>
     </section>
+  </div>
 
-  </main>
+  <!-- ==================== SEPARATE PAGES: HUMAN / BRAZILIAN / INDIAN / SYNTHETIC ==================== -->
+  <div id="vault-page-human-hair" class="vault-page relative z-10 max-w-7xl mx-auto px-4 py-12"></div>
+  <div id="vault-page-brazilian-hair" class="vault-page relative z-10 max-w-7xl mx-auto px-4 py-12"></div>
+  <div id="vault-page-indian-hair" class="vault-page relative z-10 max-w-7xl mx-auto px-4 py-12"></div>
+  <div id="vault-page-synthetic-hair" class="vault-page relative z-10 max-w-7xl mx-auto px-4 py-12"></div>
+
+  <!-- ==================== SEPARATE PAGE: CART (?page=cart) ==================== -->
+  <div id="vault-page-cart" class="vault-page relative z-10 max-w-7xl mx-auto px-4 py-12">
+    <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+      <div>
+        <a href="?page=home" onclick="handlePageLinkClick(event, 'home')" class="text-xs text-[#8b5a2b] hover:underline font-bold mb-1 inline-block">← Back to Home</a>
+        <span class="block text-xs uppercase tracking-widest text-[#8b5a2b] font-bold">Dedicated Cart Page</span>
+        <h2 class="font-luxury text-4xl sm:text-5xl font-bold text-[#2b1d14]">Your Shopping Cart</h2>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <a href="?page=human-hair" onclick="handlePageLinkClick(event, 'human-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] text-xs font-bold px-4 py-2.5 rounded-xl">Human Hair</a>
+        <a href="?page=brazilian-hair" onclick="handlePageLinkClick(event, 'brazilian-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] text-xs font-bold px-4 py-2.5 rounded-xl">Brazilian Hair</a>
+        <a href="?page=indian-hair" onclick="handlePageLinkClick(event, 'indian-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] text-xs font-bold px-4 py-2.5 rounded-xl">Indian Hair</a>
+        <a href="?page=synthetic-hair" onclick="handlePageLinkClick(event, 'synthetic-hair')" class="bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] text-xs font-bold px-4 py-2.5 rounded-xl">Synthetic Hair</a>
+      </div>
+    </div>
+
+    <div class="glass-luxe rounded-3xl p-6 sm:p-8 grid lg:grid-cols-12 gap-8">
+      <div class="lg:col-span-7 space-y-4">
+        <h3 class="font-luxury text-2xl font-bold text-[#2b1d14] border-b border-[#d7c3a8] pb-3">
+          Added Items (<span class="mob-cart-qty">0</span>)
+        </h3>
+        <div id="dedicated-cart-list" class="space-y-3 min-h-[140px]"></div>
+      </div>
+
+      <div class="lg:col-span-5 cream-card rounded-2xl p-6 flex flex-col justify-between space-y-5">
+        <div>
+          <h3 class="font-luxury text-2xl font-bold text-[#2b1d14] border-b border-[#e4d6c3] pb-3 mb-4">Cart Summary</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between text-[#5c4636]">
+              <span>Items in Cart:</span>
+              <strong id="dedicated-cart-qty" class="text-[#2b1d14]">0</strong>
+            </div>
+            <div class="flex justify-between items-baseline pt-3 border-t border-[#e4d6c3]">
+              <span class="text-xs uppercase tracking-wider text-[#6b5344] font-bold">Total:</span>
+              <span id="dedicated-cart-total" class="font-luxury text-4xl font-bold brown-gradient-text">R0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <button onclick="checkoutWhatsApp()" class="w-full py-4 px-5 rounded-2xl luxe-btn font-extrabold text-sm flex items-center justify-center gap-2 shadow transition">
+            <span>💬 Send Cart via WhatsApp</span>
+          </button>
+          <a href="tel:+27672540468" class="w-full py-3.5 px-5 rounded-2xl bg-[#efe6d8] hover:bg-[#e4d6c3] border border-[#cfb99d] text-[#2b1d14] font-extrabold text-sm flex items-center justify-center gap-2 transition">
+            <span>📞 Call Kensani: +27 67 254 0468</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-[#d7c3a8] bg-[#efe6d8] py-10 px-4 text-center sm:text-left relative z-10">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <span class="font-luxury text-2xl font-bold brown-gradient-text tracking-widest">KAYRIQUE LUXE HAIR VAULT</span>
+        <p class="text-xs text-[#6b5344] mt-1">Limpopo, South Africa • Managed by Kensani Mathebula</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="tel:+27672540468" class="px-4 py-2 rounded-full bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#cfb99d] text-xs font-bold text-[#2b1d14] transition">📞 +27 67 254 0468</a>
+        <a href="https://wa.me/27672540468" target="_blank" rel="noopener" class="px-4 py-2 rounded-full luxe-btn text-xs font-extrabold transition">💬 WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Bottom Quick-Action Bar -->
+  <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-[#faf6f0]/95 backdrop-blur-lg border-t border-[#d7c3a8] px-3 py-2 grid grid-cols-3 gap-2">
+    <a href="tel:+27672540468" class="bg-[#efe6d8] border border-[#cfb99d] text-[#2b1d14] font-bold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1.5">
+      <span>📞</span> Call
+    </a>
+    <a href="https://wa.me/27672540468?text=Hi%20Kensani!%20I%20want%20to%20order%20from%20Kayrique%20Luxe%20Hair%20Vault." target="_blank" rel="noopener" class="bg-[#8b5a2b] text-[#fffdf9] font-extrabold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1.5">
+      <span>💬</span> WhatsApp
+    </a>
+    <button onclick="redirectToStorePage('cart')" class="luxe-btn font-extrabold text-xs py-2.5 rounded-xl flex items-center justify-center gap-1.5">
+      <span>🛍️</span> Cart (<span class="mob-cart-qty">0</span>)
+    </button>
+  </div>
 
   <script>
-    const PHONE_NUMBER = '231770209652';
-    const STORAGE_KEY = 'kayrique_luxe_crown_cart_v1';
+    // Full Vault Catalog Data
+    const catalogItems = [
+      { cat: 'Wig Constructions', fiber: 'human', name: '13x4 Lace Front Wig', price: 2450, tag: 'Classic Parting', desc: 'Versatile ear-to-ear lace front for natural side or middle parts.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: '13x6 Deep Part Lace Front Wig', price: 2850, tag: 'Deep Scalp Part', desc: 'Extra 6-inch lace depth for realistic parting.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: '360 Lace Frontal Wig', price: 3650, tag: 'High Ponytail Ready', desc: 'Lace wraps all around so you can put it up in a ponytail or bun.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: 'Full Lace Wig (Hand-Tied)', price: 4900, tag: 'Maximum Versatility', desc: 'Hand-tied full cap for multi-directional styling.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: 'HD Lace / Transparent Lace Wig', price: 3950, tag: 'Undetectable Melt', desc: 'Ultra-thin invisible lace that melts into skin tones seamlessly.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: 'Glueless / Wear-and-Go Wig', price: 2290, tag: 'Beginner Friendly', desc: 'Pre-cut lace & adjustable band—put on in minutes with zero glue.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: 'Closure Wig (4x4 / 5x5 / 6x6 / 7x7)', price: 1950, tag: 'Low Maintenance', desc: 'Easy daily wear closure wig with secure parting space.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: 'U-Part / V-Part / Headband Wig', price: 1450, tag: 'Leave-Out / Quick', desc: 'Blend your natural leave-out or wear with a luxury headband.' },
+      { cat: 'Wig Constructions', fiber: 'human', name: 'Silk Base Wig', price: 3400, tag: 'Realistic Scalp', desc: 'Conceals knots beneath a smooth silk layer for scalp illusion.' },
 
-    // Color Swatches available per page
-    const COLOR_OPTIONS = [
-      { name: 'Jet Black (#1)', hex: '#0b0b0d' },
-      { name: 'Natural Off-Black (#1B)', hex: '#1e1916' },
-      { name: 'Chestnut Brown (#4)', hex: '#4a2c18' },
-      { name: 'Honey Blonde (#27)', hex: '#c7923e' },
-      { name: 'Burgundy Wine (#99J)', hex: '#5c1424' }
+      { cat: 'Weaves & Extensions', fiber: 'human', name: 'Weave Bundles (Single / 3–4 Bundle Deals)', price: 1850, tag: '3-Bundle Deal', desc: 'Full-bodied weave bundles for custom wigs or sew-ins.' },
+      { cat: 'Weaves & Extensions', fiber: 'synthetic', name: 'Synthetic Weave Bundles (Budget Packs)', price: 85, tag: 'From R45–R120', desc: 'Affordable pre-styled weave packs for quick looks.' },
+      { cat: 'Weaves & Extensions', fiber: 'human', name: 'Human Hair Blend Bundles', price: 680, tag: 'Value Blend', desc: 'Soft blend combining human hair feel with budget value.' },
+      { cat: 'Weaves & Extensions', fiber: 'human', name: 'Lace Closures & Lace Frontals (Standalone)', price: 790, tag: '4x4 to 13x6', desc: 'Matching closures and frontals to complete your bundle set.' },
+      { cat: 'Weaves & Extensions', fiber: 'synthetic', name: 'Clip-In Extensions (Seamless / Halo)', price: 950, tag: 'Instant Volume', desc: 'Clip-in sets and halo extensions for quick fullness.' },
+      { cat: 'Weaves & Extensions', fiber: 'synthetic', name: 'Tape-In Extensions', price: 1650, tag: 'Flat & Seamless', desc: 'Lay-flat extensions for smooth blending.' },
+      { cat: 'Weaves & Extensions', fiber: 'synthetic', name: 'Ponytail Extensions (Drawstring / Wrap)', price: 450, tag: 'Sleek & Snatched', desc: 'Instant sleek high or low ponytail wrap extensions.' },
+      { cat: 'Weaves & Extensions', fiber: 'human', name: 'Bulk Hair (For Braiding / Locs)', price: 1250, tag: 'Braids & Locs', desc: 'Loose bulk hair for knotless braids, twists, or loc extensions.' },
+
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Brazilian Hair (Virgin / Remy)', price: 2400, tag: 'Thick & Bouncy', desc: 'Popular full-bodied texture with rich bounce and shine.' },
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Peruvian Hair', price: 2650, tag: 'Soft & Silky', desc: 'Slightly coarser yet silky texture with great volume.' },
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Malaysian Hair', price: 2750, tag: 'Sleek Gloss', desc: 'Luxurious sheen that relaxes into soft waves.' },
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Indian Hair', price: 2200, tag: 'Natural Texture', desc: 'Fine-to-medium texture with natural movement.' },
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Vietnamese Hair (Double-Drawn)', price: 5200, tag: 'Thick Ends', desc: 'Full from root to tip with long-lasting luxury quality.' },
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Burmese Hair (Curly / Wavy)', price: 3900, tag: 'Trending Curls', desc: 'Lush, defined curls and waves with high demand.' },
+      { cat: 'Hair Origins & Grades', fiber: 'human', name: 'Raw Hair / Single-Donor Unprocessed', price: 6800, tag: 'Unprocessed Raw', desc: '100% raw cuticle-aligned hair for custom coloring & longevity.' },
+      { cat: 'Hair Origins & Grades', fiber: 'synthetic', name: '100% Synthetic Fiber / Heat-Friendly', price: 390, tag: 'Ready-to-Wear', desc: 'Pre-styled synthetic & heat-resistant styles at accessible prices.' },
+
+      { cat: 'Textures & Styles', fiber: 'human', name: 'Bone Straight / Silky Straight', price: 3100, tag: 'Glass Straight', desc: 'Pin-straight sleek finish with mirror shine.' },
+      { cat: 'Textures & Styles', fiber: 'human', name: 'Body Wave', price: 2550, tag: 'Soft S-Wave', desc: 'Classic flowing waves suitable for everyday or glam.' },
+      { cat: 'Textures & Styles', fiber: 'human', name: 'Deep Wave / Water Wave', price: 2850, tag: 'Defined Curls', desc: 'Deep sculpted waves or wet-look water curls.' },
+      { cat: 'Textures & Styles', fiber: 'human', name: 'Kinky Straight / Yaki / Afro Kinky (3C–4C)', price: 2700, tag: 'Natural Texture', desc: 'Blends naturally with relaxed or coily/4C hair textures.' },
+      { cat: 'Textures & Styles', fiber: 'human', name: 'Curly (Kinky Curly / Jerry Curl / Pixie Curl)', price: 2950, tag: 'Bouncy Curls', desc: 'Defined springy curls from tight pixie to lush coils.' },
+      { cat: 'Textures & Styles', fiber: 'synthetic', name: 'Braided Wigs (Box Braids / Knotless / Boho)', price: 1550, tag: 'Protective Glam', desc: 'Pre-braided lace wigs for effortless protective styling.' },
+
+      { cat: 'Trending Cuts & Colors', fiber: 'human', name: 'Bob Wigs (Blunt Cut / Asymmetric / Pixie)', price: 1750, tag: 'Chic Short Cut', desc: 'Sharp blunt bobs, layered lobs, and cropped pixie cuts.' },
+      { cat: 'Trending Cuts & Colors', fiber: 'human', name: 'Bussdown Wigs (Middle Part Straight/Wave)', price: 3350, tag: 'Iconic Middle Part', desc: 'Clean center part with full, sleek length.' },
+      { cat: 'Trending Cuts & Colors', fiber: 'human', name: 'Highlighted / Ombré / Skunk Stripe Wigs', price: 3200, tag: 'Dimensional Color', desc: 'Piano highlights, money pieces, ombré, and bold stripes.' },
+      { cat: 'Trending Cuts & Colors', fiber: 'human', name: 'Colored Wigs (Ginger, Burgundy/99J, Blonde/613)', price: 3150, tag: 'Statement Shades', desc: 'Rich ginger copper, burgundy wine, honey, and 613 blonde.' }
     ];
 
-    // Dedicated Page Configurations & Specific Product Lists
-    const CATEGORY_PAGES = {
+    const DEDICATED_PAGES_DATA = {
       'human-hair': {
-        pageId: 'page-human-hair',
-        title: 'Human Hair Page',
-        badge: '100% RAW & VIRGIN HUMAN HAIR',
-        subtitle: 'Cuticle-aligned human hair that can be dyed, heat-styled, and reused for long-term wear.',
-        occasionGuide: 'Best for Weddings, Bridal, VIP Galas & Long-Term Everyday Luxury where natural movement and heat styling matter most.',
-        minInch: 12,
-        maxInch: 32,
-        defaultInch: 20,
-        inchRateDelta: 8, // price adjustment per 2" from defaultInch
-        items: [
-          { id: 'hh-1', name: 'HD Lace Straight Human Hair Wig', detail: 'Pre-plucked hairline • Natural luster • Tangle-free', basePrice: 145 },
-          { id: 'hh-2', name: 'Body Wave 13x4 Human Hair Wig', detail: 'Bouncy waves • Full density • Heat-friendly', basePrice: 155 },
-          { id: 'hh-3', name: 'Human Hair Weave Bundles (3-Pack)', detail: 'Double wefted • Minimal shedding • Soft & silky', basePrice: 125 }
-        ]
+        title: 'Human Hair',
+        badge: '100% HUMAN HAIR PAGE',
+        subtitle: 'Explore human hair wigs, weave bundles, and lace constructions with live inch length & color selection.',
+        minInch: 8, maxInch: 38, defaultInch: 20, pricePerStep: 140,
+        items: catalogItems.filter(i => i.fiber === 'human').slice(0, 6)
       },
       'brazilian-hair': {
-        pageId: 'page-brazilian-hair',
-        title: 'Brazilian Hair Page',
-        badge: 'BRAZILIAN TEXTURE COLLECTION',
-        subtitle: 'Thick, bouncy Brazilian hair known for rich volume, soft shine, and springy curl/wave retention.',
-        occasionGuide: 'Best for Parties, Birthdays, Date Nights & Photoshoots when you want thick, voluminous bounce and soft touch.',
-        minInch: 14,
-        maxInch: 34,
-        defaultInch: 22,
-        inchRateDelta: 9,
+        title: 'Brazilian Hair',
+        badge: 'BRAZILIAN HAIR PAGE',
+        subtitle: 'Thick, bouncy Brazilian hair styles—adjust inch length and color below and add directly to your cart.',
+        minInch: 12, maxInch: 34, defaultInch: 22, pricePerStep: 150,
         items: [
-          { id: 'bh-1', name: 'Brazilian Deep Wave Lace Front Wig', detail: 'Defined deep curls • High bounce • Thick ends', basePrice: 165 },
-          { id: 'bh-2', name: 'Brazilian Silky Body Wave Wig', detail: 'Glossy finish • Full body • Easy to style', basePrice: 150 },
-          { id: 'bh-3', name: 'Brazilian Loose Wave Bundles (3-Pack)', detail: 'Soft wave pattern • Rich volume • Sew-in ready', basePrice: 130 }
-        ]
+          catalogItems.find(i => i.name.includes('Brazilian Hair')),
+          catalogItems.find(i => i.name.includes('Body Wave')),
+          catalogItems.find(i => i.name.includes('Deep Wave')),
+          catalogItems.find(i => i.name.includes('13x4 Lace Front Wig')),
+          catalogItems.find(i => i.name.includes('Weave Bundles'))
+        ].filter(Boolean)
       },
       'indian-hair': {
-        pageId: 'page-indian-hair',
-        title: 'Indian Hair Page',
-        badge: 'INDIAN TEMPLE HAIR COLLECTION',
-        subtitle: 'Fine-to-medium texture Indian hair with natural airy movement and realistic everyday softness.',
-        occasionGuide: 'Best for Graduations, Corporate Events, Interviews & Daily Wear where natural, understated texture looks effortless.',
-        minInch: 12,
-        maxInch: 28,
-        defaultInch: 18,
-        inchRateDelta: 7,
+        title: 'Indian Hair',
+        badge: 'INDIAN HAIR PAGE',
+        subtitle: 'Natural, soft Indian hair textures—measure your inch length, pick your shade, and add to your cart.',
+        minInch: 10, maxInch: 30, defaultInch: 18, pricePerStep: 130,
         items: [
-          { id: 'ih-1', name: 'Indian Natural Straight Closure Wig', detail: 'Airy natural movement • Soft texture • Realistic part', basePrice: 135 },
-          { id: 'ih-2', name: 'Indian Kinky Straight / Blowout Wig', detail: 'Matches relaxed/blowout hair • Natural matte sheen', basePrice: 140 },
-          { id: 'ih-3', name: 'Indian Wavy Bundles (3-Pack)', detail: 'Light natural wave • Breathable volume • Long-lasting', basePrice: 115 }
-        ]
+          catalogItems.find(i => i.name.includes('Indian Hair')),
+          catalogItems.find(i => i.name.includes('Kinky Straight')),
+          catalogItems.find(i => i.name.includes('Closure Wig')),
+          catalogItems.find(i => i.name.includes('Silk Base Wig')),
+          catalogItems.find(i => i.name.includes('Bob Wigs'))
+        ].filter(Boolean)
       },
       'synthetic-hair': {
-        pageId: 'page-synthetic-hair',
-        title: 'Synthetic Hair Page',
-        badge: 'BUDGET & STYLISH SYNTHETIC COLLECTION',
-        subtitle: 'Pre-styled, ready-to-wear synthetic units and braids that hold their shape right out of the pack.',
-        occasionGuide: 'Best for Quick Glam, Vacations, Weekend Parties & Budget-Friendly Style Changes with zero styling time.',
-        minInch: 12,
-        maxInch: 30,
-        defaultInch: 20,
-        inchRateDelta: 3,
-        items: [
-          { id: 'sh-1', name: 'Pre-Styled Lace Synthetic Wave Wig', detail: 'Ready-to-wear curls • Holds style • Budget-friendly', basePrice: 42 },
-          { id: 'sh-2', name: 'Sleek High Ponytail Synthetic Extension', detail: 'Drawstring wrap • Quick glam • Lightweight', basePrice: 28 },
-          { id: 'sh-3', name: 'Box Braid / Boho Braided Wig', detail: 'Protective style • Neat parting • Ready to wear', basePrice: 65 }
-        ]
+        title: 'Synthetic Hair',
+        badge: 'SYNTHETIC HAIR PAGE',
+        subtitle: 'Ready-to-wear synthetic wigs, ponytails, braids, and budget weave packs—choose length & color.',
+        minInch: 10, maxInch: 32, defaultInch: 20, pricePerStep: 45,
+        items: catalogItems.filter(i => i.fiber === 'synthetic')
       }
     };
 
-    // Per-page interactive state (selected inch, selected color index)
-    const pageState = {
+    const HAIR_COLORS = [
+      { label: 'Natural Black (#1)', hex: '#231710' },
+      { label: 'Off-Black (#1B)', hex: '#3b2618' },
+      { label: 'Burgundy (#99J)', hex: '#6e2635' },
+      { label: 'Ginger Copper', hex: '#b45309' },
+      { label: 'Honey Blonde (#27)', hex: '#c7923e' }
+    ];
+
+    const subPageState = {
       'human-hair': { inch: 20, colorIdx: 0 },
       'brazilian-hair': { inch: 22, colorIdx: 1 },
       'indian-hair': { inch: 18, colorIdx: 0 },
       'synthetic-hair': { inch: 20, colorIdx: 0 }
     };
 
-    let cart = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    // Amazon / Nykaa style page redirect handler (?page=...)
+    const VALID_STORE_PAGES = ['home', 'human-hair', 'brazilian-hair', 'indian-hair', 'synthetic-hair', 'cart'];
 
-    function computeScaledPrice(basePrice, pageKey, inch) {
-      const cfg = CATEGORY_PAGES[pageKey];
-      const steps = (inch - cfg.defaultInch) / 2;
-      return Math.max(15, Math.round(basePrice + steps * cfg.inchRateDelta));
+    function getRequestedStorePage() {
+      const params = new URLSearchParams(window.location.search);
+      const qPage = params.get('page');
+      if (qPage && VALID_STORE_PAGES.includes(qPage)) return qPage;
+      const hashPage = window.location.hash.replace('#', '');
+      if (hashPage && VALID_STORE_PAGES.includes(hashPage)) return hashPage;
+      return 'home';
     }
 
-    function getLengthZone(inch) {
-      if (inch <= 14) return 'Chin / Collarbone Length';
-      if (inch <= 18) return 'Shoulder / Upper-Back Length';
-      if (inch <= 24) return 'Mid-Back Length';
-      if (inch <= 28) return 'Waist Length';
-      return 'Hip Length';
+    function redirectToStorePage(page) {
+      const target = VALID_STORE_PAGES.includes(page) ? page : 'home';
+      const url = new URL(window.location.href);
+      url.searchParams.set('page', target);
+      url.hash = '';
+      try {
+        window.history.pushState({ page: target }, '', url.toString());
+        applyStorePageView(target);
+      } catch (_) {
+        window.location.assign(url.toString());
+      }
     }
 
-    function renderAllCategoryPages() {
-      // Home category cards
-      const homeGrid = document.getElementById('home-category-cards');
-      homeGrid.innerHTML = Object.entries(CATEGORY_PAGES).map(([key, cfg]) => `
-        <div class="royal-glass rounded-3xl p-6 flex flex-col justify-between">
-          <div>
-            <span class="text-[10px] uppercase tracking-wider bg-yellow-400/15 border border-yellow-400/30 text-yellow-200 px-3 py-1 rounded-full font-bold">
-              ${cfg.badge}
-            </span>
-            <h3 class="font-royal text-2xl font-bold text-white mt-3">${cfg.title}</h3>
-            <p class="text-xs text-blue-100/85 mt-2 leading-relaxed">${cfg.subtitle}</p>
-            <p class="text-[11px] text-yellow-200/90 mt-3 bg-[#050d24] p-3 rounded-xl border border-white/10">
-              <strong>Occasion fit:</strong> ${cfg.occasionGuide}
-            </p>
-          </div>
-          <button onclick="navigateTo('${key}')" class="mt-5 w-full py-3 rounded-xl gold-foil-btn font-extrabold text-xs uppercase tracking-wider transition">
-            Go to ${cfg.title} →
-          </button>
-        </div>
-      `).join('');
+    function handlePageLinkClick(event, page) {
+      if (event && (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey)) return;
+      if (event) event.preventDefault();
+      redirectToStorePage(page);
+    }
 
-      // Individual dedicated pages
-      Object.entries(CATEGORY_PAGES).forEach(([key, cfg]) => {
-        const container = document.getElementById(cfg.pageId);
-        container.innerHTML = `
+    function applyStorePageView(target) {
+      document.querySelectorAll('.vault-page').forEach(p => p.classList.remove('active'));
+      const sec = document.getElementById(`vault-page-${target}`);
+      if (sec) sec.classList.add('active');
+
+      document.querySelectorAll('.store-nav-link').forEach(link => {
+        const active = link.getAttribute('data-page-link') === target;
+        link.classList.toggle('text-[#8b5a2b]', active);
+        link.classList.toggle('underline', active);
+      });
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    window.addEventListener('popstate', () => {
+      applyStorePageView(getRequestedStorePage());
+    });
+
+    function renderDedicatedSubPages() {
+      Object.entries(DEDICATED_PAGES_DATA).forEach(([key, cfg]) => {
+        const el = document.getElementById(`vault-page-${key}`);
+        if (!el) return;
+        const st = subPageState[key];
+        el.innerHTML = `
           <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
             <div>
-              <button onclick="navigateTo('home')" class="text-xs text-yellow-300 hover:underline font-bold mb-1 inline-block">← Back to Home</button>
-              <span class="block text-[11px] uppercase tracking-widest text-emerald-300 font-bold">${cfg.badge}</span>
-              <h2 class="font-royal text-3xl sm:text-4xl font-bold text-white">${cfg.title}</h2>
+              <a href="?page=home" onclick="handlePageLinkClick(event, 'home')" class="text-xs text-[#8b5a2b] hover:underline font-bold mb-1 inline-block">← Back to Home</a>
+              <span class="block text-xs uppercase tracking-widest text-[#8b5a2b] font-bold">${cfg.badge}</span>
+              <h2 class="font-luxury text-4xl sm:text-5xl font-bold text-[#2b1d14]">${cfg.title}</h2>
+              <p class="text-[#5c4636] text-sm mt-1 max-w-2xl">${cfg.subtitle}</p>
             </div>
-            <button onclick="navigateTo('cart')" class="gold-foil-btn text-xs font-extrabold px-4 py-2.5 rounded-xl">
-              👜 View Cart (<span class="cart-badge">${getTotalCartQty()}</span>)
+            <button onclick="redirectToStorePage('cart')" class="luxe-btn text-xs font-extrabold px-5 py-3 rounded-2xl shadow">
+              🛍️ View Cart (<span class="mob-cart-qty">${bag.reduce((a,b)=>a+b.qty,0)}</span>)
             </button>
           </div>
 
-          <p class="text-sm text-blue-100/90 mb-4 max-w-3xl">${cfg.subtitle}</p>
-          <div class="bg-[#050d24] border border-yellow-400/25 rounded-2xl p-4 mb-8 text-xs sm:text-sm text-yellow-100">
-            <strong class="text-yellow-300">Occasion Guide for ${cfg.title}:</strong> ${cfg.occasionGuide}
-          </div>
-
-          <!-- Measuring Scale & Color Selector Box Specific to This Page -->
-          <div class="royal-glass rounded-3xl p-5 sm:p-7 grid lg:grid-cols-12 gap-6 items-center mb-10">
-            <div class="lg:col-span-5 bg-[#050d24] rounded-2xl p-4 border border-yellow-400/20 flex items-center justify-around gap-3">
-              <svg viewBox="0 0 160 250" class="w-36 h-56 shrink-0">
-                <circle cx="70" cy="40" r="21" fill="#172e66" stroke="#facc15" stroke-width="1.5"/>
-                <path d="M34 95 Q70 76 106 95 L115 152 L25 152 Z" fill="#0f214d" stroke="#3b82f6" stroke-width="1"/>
-                <path id="hair-path-${key}" class="hair-silhouette" d="M46 36 Q70 8 94 36 L106 146 Q70 156 34 146 Z" fill="${COLOR_OPTIONS[pageState[key].colorIdx].hex}" opacity="0.95"/>
-                <line x1="128" y1="60" x2="128" y2="235" stroke="#facc15" stroke-width="1.5" stroke-dasharray="3 3"/>
-                <circle id="marker-${key}" cx="128" cy="146" r="5" fill="#facc15"/>
-                <text x="135" y="68" fill="#93c5fd" font-size="8">${cfg.minInch}"</text>
-                <text x="135" y="148" fill="#fde047" font-size="8" font-weight="bold">${cfg.defaultInch}"</text>
-                <text x="135" y="232" fill="#facc15" font-size="8" font-weight="bold">${cfg.maxInch}"</text>
+          <div class="glass-luxe rounded-3xl p-6 mb-8 grid lg:grid-cols-12 gap-6 items-center">
+            <div class="lg:col-span-5 cream-card rounded-2xl p-4 flex items-center justify-around gap-3">
+              <svg viewBox="0 0 140 230" class="w-28 h-44 shrink-0">
+                <circle cx="70" cy="42" r="22" fill="#efe6d8" stroke="#8b5a2b" stroke-width="1.5"/>
+                <path d="M35 95 Q70 78 105 95 L114 145 L26 145 Z" fill="#e4d6c3" stroke="#b58963" stroke-width="1"/>
+                <path id="sub-hair-${key}" class="hair-strand" d="M46 38 Q70 10 94 38 L104 135 Q70 145 36 135 Z" fill="${HAIR_COLORS[st.colorIdx].hex}" opacity="0.95"/>
+                <line x1="120" y1="64" x2="128" y2="215" stroke="#8b5a2b" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <circle id="sub-marker-${key}" cx="128" cy="138" r="4.5" fill="#8b5a2b"/>
+                <text x="131" y="67" fill="#6b5344" font-size="7">${cfg.minInch}"</text>
+                <text x="131" y="218" fill="#6f4524" font-size="7" font-weight="bold">${cfg.maxInch}"</text>
               </svg>
               <div class="space-y-2 text-left">
-                <span class="text-[10px] uppercase tracking-wider text-blue-300">Selected Length</span>
-                <p id="inch-label-${key}" class="font-royal text-2xl sm:text-3xl font-extrabold gold-text">${pageState[key].inch}"</p>
-                <p id="zone-label-${key}" class="text-xs text-yellow-200 font-semibold">${getLengthZone(pageState[key].inch)}</p>
-                <div class="pt-1">
-                  <span class="text-[10px] uppercase tracking-wider text-blue-300 block">Selected Color</span>
-                  <p id="color-label-${key}" class="text-xs font-bold text-white mt-0.5">${COLOR_OPTIONS[pageState[key].colorIdx].name}</p>
-                </div>
+                <span class="text-[10px] uppercase tracking-wider text-[#6b5344]">Length Scale</span>
+                <p id="sub-inch-val-${key}" class="font-luxury text-3xl font-bold brown-gradient-text">${st.inch}"</p>
+                <span class="text-[10px] uppercase tracking-wider text-[#6b5344] block">Selected Color</span>
+                <p id="sub-color-val-${key}" class="text-xs font-bold text-[#2b1d14]">${HAIR_COLORS[st.colorIdx].label}</p>
               </div>
             </div>
 
             <div class="lg:col-span-7 space-y-5">
-              <!-- Inch Length Measuring Scale -->
-              <div class="bg-blue-950/60 p-4 sm:p-5 rounded-2xl border border-yellow-400/20">
-                <div class="flex justify-between items-center mb-2">
-                  <span class="text-xs font-extrabold uppercase tracking-wider text-yellow-300">Inch Length Measuring Scale</span>
-                  <span id="scale-readout-${key}" class="text-xs font-bold bg-yellow-400/20 text-yellow-200 px-3 py-1 rounded-full">${pageState[key].inch} Inches</span>
+              <div>
+                <div class="flex justify-between text-xs font-bold mb-1.5">
+                  <span class="text-[#6f4524] uppercase tracking-wider">Inch Length Measuring Scale</span>
+                  <span id="sub-scale-badge-${key}" class="text-[#2b1d14]">${st.inch} Inches</span>
                 </div>
-                <input
-                  id="slider-${key}"
-                  type="range"
-                  min="${cfg.minInch}"
-                  max="${cfg.maxInch}"
-                  step="2"
-                  value="${pageState[key].inch}"
-                  oninput="updateCategoryScale('${key}', this.value)"
-                  class="w-full accent-yellow-400 cursor-pointer"
-                >
-                <div class="flex justify-between text-[10px] text-blue-200 mt-1.5 font-semibold">
+                <input type="range" min="${cfg.minInch}" max="${cfg.maxInch}" step="2" value="${st.inch}" oninput="updateSubPageScale('${key}', this.value)" class="w-full accent-[#8b5a2b] cursor-pointer">
+                <div class="flex justify-between text-[10px] text-[#6b5344] mt-1">
                   <span>${cfg.minInch}"</span>
-                  <span>${Math.round((cfg.minInch + cfg.maxInch) / 4)}"</span>
                   <span>${Math.round((cfg.minInch + cfg.maxInch) / 2)}"</span>
-                  <span>${Math.round((cfg.minInch + cfg.maxInch) * 0.75)}"</span>
                   <span>${cfg.maxInch}"</span>
                 </div>
               </div>
 
-              <!-- Color Selector -->
-              <div class="bg-blue-950/60 p-4 sm:p-5 rounded-2xl border border-yellow-400/20">
-                <span class="block text-xs font-extrabold uppercase tracking-wider text-yellow-300 mb-3">Choose Hair Color</span>
+              <div>
+                <span class="block text-xs font-bold text-[#6f4524] uppercase tracking-wider mb-2">Choose Color</span>
                 <div class="flex flex-wrap gap-2">
-                  ${COLOR_OPTIONS.map((c, idx) => `
-                    <button
-                      id="color-btn-${key}-${idx}"
-                      onclick="selectCategoryColor('${key}', ${idx})"
-                      class="flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold border transition ${
-                        idx === pageState[key].colorIdx
-                          ? 'bg-yellow-400 text-slate-950 border-yellow-300'
-                          : 'bg-[#050d24] text-blue-100 border-white/15 hover:border-yellow-400/40'
-                      }"
-                    >
-                      <span class="w-3.5 h-3.5 rounded-full border border-white/40 inline-block" style="background:${c.hex}"></span>
-                      <span>${c.name}</span>
+                  ${HAIR_COLORS.map((c, i) => `
+                    <button id="sub-cbtn-${key}-${i}" onclick="updateSubPageColor('${key}', ${i})" class="flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${i === st.colorIdx ? 'bg-[#8b5a2b] text-[#fffdf9] border-[#6f4524]' : 'bg-[#fffdf9] text-[#2b1d14] border-[#d7c3a8]'}">
+                      <span class="w-3 h-3 rounded-full border border-[#d7c3a8] inline-block" style="background:${c.hex}"></span>
+                      <span>${c.label}</span>
                     </button>
                   `).join('')}
                 </div>
@@ -461,91 +790,70 @@
             </div>
           </div>
 
-          <!-- Specific Product List for This Page -->
-          <h3 class="font-royal text-2xl font-bold text-white mb-4">${cfg.title} — Available Units & Prices</h3>
-          <div id="list-${key}" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+          <div id="sub-list-${key}" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
         `;
-
-        updateCategoryScale(key, pageState[key].inch);
+        updateSubPageScale(key, st.inch);
       });
     }
 
-    function updateCategoryScale(key, rawVal) {
-      const cfg = CATEGORY_PAGES[key];
-      const inch = parseInt(rawVal, 10);
-      pageState[key].inch = inch;
-
-      const ratio = (inch - cfg.minInch) / Math.max(1, (cfg.maxInch - cfg.minInch));
-      const yBottom = 64 + ratio * 168;
-      const spread = 96 + ratio * 14;
+    function updateSubPageScale(key, val) {
+      const cfg = DEDICATED_PAGES_DATA[key];
+      const inch = parseInt(val, 10);
+      subPageState[key].inch = inch;
+      const ratio = (inch - cfg.minInch) / Math.max(1, cfg.maxInch - cfg.minInch);
+      const yBottom = 64 + ratio * 151;
+      const spread = 96 + ratio * 12;
       const leftX = 140 - spread;
-
-      const pathEl = document.getElementById(`hair-path-${key}`);
-      const markerEl = document.getElementById(`marker-${key}`);
+      const pathEl = document.getElementById(`sub-hair-${key}`);
+      const markerEl = document.getElementById(`sub-marker-${key}`);
       if (pathEl && markerEl) {
-        pathEl.setAttribute('d', `M46 36 Q70 8 94 36 L${spread} ${yBottom} Q70 ${yBottom + 10} ${leftX} ${yBottom} Z`);
+        pathEl.setAttribute('d', `M46 38 Q70 10 94 38 L${spread} ${yBottom} Q70 ${yBottom + 10} ${leftX} ${yBottom} Z`);
         markerEl.setAttribute('cy', yBottom);
       }
-
-      document.getElementById(`inch-label-${key}`).textContent = `${inch}"`;
-      document.getElementById(`zone-label-${key}`).textContent = getLengthZone(inch);
-      document.getElementById(`scale-readout-${key}`).textContent = `${inch} Inches`;
-
-      renderCategoryItems(key);
+      document.getElementById(`sub-inch-val-${key}`).textContent = `${inch}"`;
+      document.getElementById(`sub-scale-badge-${key}`).textContent = `${inch} Inches`;
+      renderSubPageItems(key);
     }
 
-    function selectCategoryColor(key, colorIdx) {
-      pageState[key].colorIdx = colorIdx;
-      const color = COLOR_OPTIONS[colorIdx];
-
-      const pathEl = document.getElementById(`hair-path-${key}`);
+    function updateSubPageColor(key, idx) {
+      subPageState[key].colorIdx = idx;
+      const color = HAIR_COLORS[idx];
+      const pathEl = document.getElementById(`sub-hair-${key}`);
       if (pathEl) pathEl.setAttribute('fill', color.hex);
-      document.getElementById(`color-label-${key}`).textContent = color.name;
-
-      COLOR_OPTIONS.forEach((_, idx) => {
-        const btn = document.getElementById(`color-btn-${key}-${idx}`);
+      document.getElementById(`sub-color-val-${key}`).textContent = color.label;
+      HAIR_COLORS.forEach((_, i) => {
+        const btn = document.getElementById(`sub-cbtn-${key}-${i}`);
         if (btn) {
-          btn.className = `flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-bold border transition ${
-            idx === colorIdx
-              ? 'bg-yellow-400 text-slate-950 border-yellow-300'
-              : 'bg-[#050d24] text-blue-100 border-white/15 hover:border-yellow-400/40'
-          }`;
+          btn.className = `flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${i === idx ? 'bg-[#8b5a2b] text-[#fffdf9] border-[#6f4524]' : 'bg-[#fffdf9] text-[#2b1d14] border-[#d7c3a8]'}`;
         }
       });
-
-      renderCategoryItems(key);
+      renderSubPageItems(key);
     }
 
-    function renderCategoryItems(key) {
-      const cfg = CATEGORY_PAGES[key];
-      const inch = pageState[key].inch;
-      const color = COLOR_OPTIONS[pageState[key].colorIdx];
-      const listEl = document.getElementById(`list-${key}`);
-      if (!listEl) return;
+    function renderSubPageItems(key) {
+      const cfg = DEDICATED_PAGES_DATA[key];
+      const st = subPageState[key];
+      const color = HAIR_COLORS[st.colorIdx];
+      const grid = document.getElementById(`sub-list-${key}`);
+      if (!grid) return;
 
-      listEl.innerHTML = cfg.items.map(item => {
-        const price = computeScaledPrice(item.basePrice, key, inch);
+      grid.innerHTML = cfg.items.map(item => {
+        const steps = (st.inch - cfg.defaultInch) / 2;
+        const price = Math.max(45, Math.round(item.price + steps * cfg.pricePerStep));
+        const fullName = `${st.inch}" ${item.name} (${color.label})`;
         return `
-          <div class="royal-glass rounded-3xl p-6 flex flex-col justify-between">
+          <div class="glass-luxe rounded-2xl p-5 flex flex-col justify-between hover:border-[#8b5a2b] transition">
             <div>
               <div class="flex items-center justify-between gap-2 mb-2">
-                <span class="text-[10px] uppercase tracking-wider bg-yellow-400/15 border border-yellow-400/30 text-yellow-200 px-2.5 py-1 rounded-full font-bold">
-                  ${inch}" Length
-                </span>
-                <span class="text-[11px] text-blue-200 font-semibold">${color.name}</span>
+                <span class="text-[10px] uppercase tracking-wider bg-[#fffdf9] border border-[#cfb99d] text-[#6f4524] px-2.5 py-0.5 rounded-full font-bold">${st.inch}" • ${color.label}</span>
+                <span class="text-[10px] text-[#6b5344] font-semibold">${cfg.title}</span>
               </div>
-              <h4 class="font-royal text-lg font-bold text-white leading-snug">${item.name}</h4>
-              <p class="text-xs text-blue-100/80 mt-1.5 mb-4">${item.detail}</p>
+              <h4 class="font-luxury text-2xl font-bold text-[#2b1d14] leading-snug">${item.name}</h4>
+              <p class="text-xs text-[#5c4636] mt-1.5 mb-4 leading-relaxed">${item.desc}</p>
             </div>
-            <div>
-              <div class="bg-[#050d24] border border-white/10 rounded-2xl p-3.5 mb-4 flex items-baseline justify-between">
-                <span class="text-xs text-blue-200">Price (${inch}"):</span>
-                <span class="font-royal text-2xl font-extrabold gold-text">$${price}</span>
-              </div>
-              <button
-                onclick="addToCartAndGo('${item.id}', '${key}', '${item.name.replace(/'/g, "\\'")}', ${inch}, '${color.name.replace(/'/g, "\\'")}', ${price})"
-                class="w-full py-3 rounded-xl gold-foil-btn font-extrabold text-xs uppercase tracking-wider transition transform active:scale-95"
-              >
+            <div class="flex items-center justify-between pt-3 border-t border-[#d7c3a8]">
+              <span class="font-luxury text-2xl font-bold brown-gradient-text">R${price.toLocaleString()}</span>
+              <button onclick="addToBag('${fullName.replace(/'/g, "\\'")}', ${price})" class="luxe-btn text-xs font-extrabold px-4 py-2.5 rounded-xl shadow transition active:scale-95">
                 + Add to Cart
               </button>
             </div>
@@ -554,186 +862,302 @@
       }).join('');
     }
 
-    // Cart Functions
-    function getTotalCartQty() {
-      return cart.reduce((sum, item) => sum + item.qty, 0);
+    // Studio Visualizer State
+    let studioState = { grade: 'human', length: 20, texture: 'Body Wave' };
+    const lengthMeta = {
+      8:  { fall: 'Chin / Jaw Bob', yBottom: 78, spread: 96, baseHuman: 1850, baseSynth: 290 },
+      14: { fall: 'Collarbone Lob', yBottom: 105, spread: 100, baseHuman: 2450, baseSynth: 390 },
+      20: { fall: 'Mid-Back Luxe', yBottom: 142, spread: 104, baseHuman: 3450, baseSynth: 520 },
+      28: { fall: 'Waist Length', yBottom: 182, spread: 108, baseHuman: 5600, baseSynth: 690 },
+      38: { fall: 'Hip Bussdown', yBottom: 215, spread: 112, baseHuman: 8900, baseSynth: 890 }
+    };
+    const textureDelta = {
+      'Bone Straight': 250,
+      'Body Wave': 0,
+      'Deep Wave': 200,
+      'Afro Kinky 4C': 150,
+      'Burmese Curly': 650
+    };
+
+    function setStudioGrade(g) {
+      studioState.grade = g;
+      document.getElementById('grade-human').className = g === 'human'
+        ? 'py-2 rounded-lg text-xs font-extrabold bg-[#8b5a2b] text-[#fffdf9] transition'
+        : 'py-2 rounded-lg text-xs font-bold text-[#5c4636] hover:text-[#2b1d14] transition';
+      document.getElementById('grade-synthetic').className = g === 'synthetic'
+        ? 'py-2 rounded-lg text-xs font-extrabold bg-[#8b5a2b] text-[#fffdf9] transition'
+        : 'py-2 rounded-lg text-xs font-bold text-[#5c4636] hover:text-[#2b1d14] transition';
+      updateStudio();
     }
 
-    function saveCart() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-      updateCartBadges();
-      renderCartPage();
-    }
-
-    function updateCartBadges() {
-      const totalQty = getTotalCartQty();
-      document.querySelectorAll('.cart-badge').forEach(el => {
-        el.textContent = totalQty;
+    function setStudioLength(len) {
+      studioState.length = len;
+      document.querySelectorAll('.len-btn').forEach(btn => {
+        const isMatch = btn.textContent.startsWith(len + '"');
+        btn.className = isMatch
+          ? 'len-btn bg-[#8b5a2b] text-[#fffdf9] py-1.5 rounded-lg text-xs font-extrabold'
+          : 'len-btn bg-[#fffdf9] hover:bg-[#e4d6c3] border border-[#d7c3a8] py-1.5 rounded-lg text-xs font-bold text-[#2b1d14]';
       });
+      updateStudio();
     }
 
-    function addToCartAndGo(itemId, pageKey, name, inch, colorName, price) {
-      const pageLabel = CATEGORY_PAGES[pageKey].title.replace(' Page', '');
-      const existingIdx = cart.findIndex(
-        c => c.id === itemId && c.inch === inch && c.color === colorName
-      );
-      if (existingIdx > -1) {
-        cart[existingIdx].qty += 1;
-      } else {
-        cart.push({
-          id: itemId,
-          category: pageLabel,
-          name,
-          inch,
-          color: colorName,
-          price,
-          qty: 1
-        });
-      }
-      saveCart();
-      navigateTo('cart');
+    function setStudioTexture(tex) {
+      studioState.texture = tex;
+      document.querySelectorAll('.tex-btn').forEach(btn => {
+        const isMatch = btn.textContent === tex;
+        btn.className = isMatch
+          ? 'tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#8b5a2b] text-[#fffdf9] font-bold'
+          : 'tex-btn text-[11px] px-2.5 py-1 rounded-full bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c] font-semibold';
+      });
+      updateStudio();
     }
 
-    function changeQty(idx, delta) {
-      if (!cart[idx]) return;
-      cart[idx].qty += delta;
-      if (cart[idx].qty <= 0) {
-        cart.splice(idx, 1);
-      }
-      saveCart();
+    function updateStudio() {
+      const m = lengthMeta[studioState.length];
+      const isHuman = studioState.grade === 'human';
+      const price = (isHuman ? m.baseHuman : m.baseSynth) + (isHuman ? textureDelta[studioState.texture] : Math.round(textureDelta[studioState.texture] * 0.25));
+
+      document.getElementById('studio-badge').textContent = isHuman ? '100% HUMAN HAIR' : 'SYNTHETIC / BLEND';
+      document.getElementById('studio-inch-label').textContent = `${studioState.length} Inches`;
+      document.getElementById('studio-title').textContent = `${studioState.length}" ${studioState.texture} ${isHuman ? '13x4 Lace' : 'Style'}`;
+      document.getElementById('studio-fall').textContent = m.fall;
+      document.getElementById('studio-density').textContent = isHuman ? '200% Luxe' : 'Full Ready-Style';
+      document.getElementById('studio-price').textContent = `R${price.toLocaleString()}`;
+
+      const leftX = 140 - m.spread;
+      document.getElementById('svg-hair-shape').setAttribute('d', `M46 38 Q70 10 94 38 L${m.spread} ${m.yBottom} Q70 ${m.yBottom + 12} ${leftX} ${m.yBottom} Z`);
     }
 
-    function removeItem(idx) {
-      cart.splice(idx, 1);
-      saveCart();
+    function addStudioBuildToBag() {
+      const m = lengthMeta[studioState.length];
+      const isHuman = studioState.grade === 'human';
+      const price = (isHuman ? m.baseHuman : m.baseSynth) + (isHuman ? textureDelta[studioState.texture] : Math.round(textureDelta[studioState.texture] * 0.25));
+      const label = `${studioState.length}" ${studioState.texture} (${isHuman ? 'Human Hair' : 'Synthetic/Blend'})`;
+      addToBag(label, price);
     }
 
-    function clearCart() {
-      cart = [];
-      saveCart();
+    // Catalog Filter & Render
+    const categories = ['All', 'Wig Constructions', 'Weaves & Extensions', 'Hair Origins & Grades', 'Textures & Styles', 'Trending Cuts & Colors'];
+    let activeCat = 'All';
+    let activeFiber = 'all';
+
+    function renderCategoryTabs() {
+      const tabsEl = document.getElementById('category-tabs');
+      tabsEl.innerHTML = categories.map(cat => `
+        <button onclick="setCategory('${cat}')" class="px-3.5 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition ${
+          activeCat === cat ? 'bg-[#8b5a2b] text-[#fffdf9] font-extrabold' : 'bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c] hover:bg-[#e4d6c3]'
+        }">${cat}</button>
+      `).join('');
     }
 
-    function renderCartPage() {
-      const container = document.getElementById('cart-page-items');
-      const qtyEl = document.getElementById('cart-total-qty');
-      const totalEl = document.getElementById('cart-grand-total');
-      if (!container) return;
+    function setCategory(cat) { activeCat = cat; renderCategoryTabs(); renderCatalog(); }
 
-      if (!cart.length) {
-        container.innerHTML = `
-          <div class="bg-[#050d24] border border-dashed border-yellow-400/30 rounded-2xl p-8 text-center space-y-3">
-            <p class="text-sm font-bold text-white">Your cart is currently empty.</p>
-            <p class="text-xs text-blue-200">Open any hair page to pick a length, color, and item to add to your cart.</p>
-            <div class="flex flex-wrap justify-center gap-2 pt-2">
-              <button onclick="navigateTo('human-hair')" class="gold-foil-btn text-xs font-extrabold px-4 py-2 rounded-xl">Human Hair</button>
-              <button onclick="navigateTo('brazilian-hair')" class="bg-blue-950 border border-yellow-400/30 text-yellow-200 text-xs font-bold px-4 py-2 rounded-xl">Brazilian Hair</button>
-              <button onclick="navigateTo('indian-hair')" class="bg-blue-950 border border-yellow-400/30 text-yellow-200 text-xs font-bold px-4 py-2 rounded-xl">Indian Hair</button>
-              <button onclick="navigateTo('synthetic-hair')" class="bg-blue-950 border border-yellow-400/30 text-yellow-200 text-xs font-bold px-4 py-2 rounded-xl">Synthetic Hair</button>
-            </div>
-          </div>
-        `;
-        qtyEl.textContent = '0';
-        totalEl.textContent = '$0';
+    function setFiberFilter(fib) {
+      activeFiber = fib;
+      ['all', 'human', 'synthetic'].forEach(f => {
+        document.getElementById('fib-' + f).className = f === fib
+          ? 'px-4 py-2.5 rounded-xl text-xs font-extrabold bg-[#8b5a2b] text-[#fffdf9]'
+          : 'px-4 py-2.5 rounded-xl text-xs font-bold bg-[#fffdf9] border border-[#d7c3a8] text-[#3d291c]';
+      });
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const q = (document.getElementById('catalog-search').value || '').toLowerCase().trim();
+      const grid = document.getElementById('catalog-grid');
+      const filtered = catalogItems.filter(item => {
+        const catMatch = activeCat === 'All' || item.cat === activeCat;
+        const fibMatch = activeFiber === 'all' || item.fiber === activeFiber;
+        const qMatch = !q || item.name.toLowerCase().includes(q) || item.desc.toLowerCase().includes(q) || item.cat.toLowerCase().includes(q);
+        return catMatch && fibMatch && qMatch;
+      });
+
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="col-span-full glass-luxe rounded-2xl p-8 text-center text-[#5c4636] text-sm">No styles matched "${q}". Try searching "Bone Straight", "Bob", "Burmese", or "Ponytail".</div>`;
         return;
       }
 
-      let totalQty = 0;
-      let totalAmount = 0;
-
-      container.innerHTML = cart.map((item, idx) => {
-        const lineTotal = item.price * item.qty;
-        totalQty += item.qty;
-        totalAmount += lineTotal;
-        return `
-          <div class="bg-[#050d24] border border-yellow-400/25 rounded-2xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span class="text-[10px] uppercase tracking-wider bg-yellow-400/15 text-yellow-300 px-2.5 py-0.5 rounded-full font-bold">
-                ${item.category}
-              </span>
-              <h4 class="font-bold text-sm sm:text-base text-white mt-1">${item.name}</h4>
-              <p class="text-xs text-blue-200 mt-0.5">Length: <strong>${item.inch}"</strong> • Color: <strong>${item.color}</strong> • Unit Price: <strong>$${item.price}</strong></p>
+      grid.innerHTML = filtered.map(item => `
+        <div class="glass-luxe rounded-2xl p-5 flex flex-col justify-between hover:border-[#8b5a2b] transition">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-2">
+              <span class="text-[10px] uppercase tracking-wider bg-[#fffdf9] border border-[#cfb99d] text-[#6f4524] px-2.5 py-0.5 rounded-full font-bold">${item.tag}</span>
+              <span class="text-[10px] uppercase font-bold text-[#6b5344]">${item.fiber === 'human' ? 'Human Hair' : 'Synthetic / Blend'}</span>
             </div>
+            <h3 class="font-luxury text-2xl font-bold text-[#2b1d14] leading-snug">${item.name}</h3>
+            <p class="text-xs text-[#5c4636] mt-1.5 mb-4 leading-relaxed">${item.desc}</p>
+          </div>
+          <div class="flex items-center justify-between pt-3 border-t border-[#d7c3a8]">
+            <span class="font-luxury text-2xl font-bold brown-gradient-text">R${item.price.toLocaleString()}</span>
+            <button onclick="addToBag('${item.name.replace(/'/g, "\\'")}', ${item.price})" class="luxe-btn text-xs font-extrabold px-4 py-2.5 rounded-xl shadow transition active:scale-95">
+              + Add to Cart
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
 
-            <div class="flex items-center justify-between sm:justify-end gap-3">
-              <div class="flex items-center bg-[#091536] border border-yellow-400/25 rounded-xl">
-                <button onclick="changeQty(${idx}, -1)" class="px-3 py-1.5 text-xs font-extrabold text-yellow-300 hover:bg-white/5">−</button>
-                <span class="px-2.5 text-xs font-extrabold text-white">${item.qty}</span>
-                <button onclick="changeQty(${idx}, 1)" class="px-3 py-1.5 text-xs font-extrabold text-yellow-300 hover:bg-white/5">+</button>
-              </div>
-              <span class="font-royal text-lg font-extrabold gold-text min-w-[64px] text-right">$${lineTotal}</span>
-              <button onclick="removeItem(${idx})" class="text-xs text-rose-400 hover:text-rose-300 font-bold px-2 py-1" title="Remove">✕</button>
+    // Bundle Calculator
+    function updateBundleCalc() {
+      const originBase = parseInt(document.getElementById('calc-origin').value, 10);
+      const lenRange = document.getElementById('calc-length').value;
+      const laceAdd = parseInt(document.getElementById('calc-lace').value, 10);
+
+      let bundles = 3;
+      let lenMult = 1;
+      let advice = 'For 16"–22" lengths, 3 full bundles give a lush, natural volume from root to tip without thin ends.';
+
+      if (lenRange === '10-14') {
+        bundles = 2; lenMult = 0.78;
+        advice = 'Short bobs & lobs (10"–14") only need 2 bundles for full density without excess weight.';
+      } else if (lenRange === '24-30') {
+        bundles = 4; lenMult = 1.32;
+        advice = 'Longer 24"–30" wefts are longer per bundle, so 4 bundles keep your ends thick and full.';
+      } else if (lenRange === '32-40') {
+        bundles = 4; lenMult = 1.75;
+        advice = 'Extra-long 32"–40" bussdown lengths require 4 bundles for luxury fullness from crown to tip.';
+      }
+
+      const total = Math.round(originBase * lenMult) + laceAdd;
+      const laceLabel = laceAdd === 0 ? 'Bundles Only' : (laceAdd === 450 ? '+ 4x4/5x5 Closure' : (laceAdd === 750 ? '+ 6x6/7x7 Closure' : '+ 13x4/13x6 Frontal'));
+
+      document.getElementById('bc-bundles').textContent = `${bundles} Bundles ${laceLabel}`;
+      document.getElementById('bc-advice').textContent = advice;
+      document.getElementById('bc-price').textContent = `R${total.toLocaleString()}`;
+    }
+
+    function addBundlePackageToBag() {
+      const name = document.getElementById('bc-bundles').textContent + ' (' + document.getElementById('calc-length').selectedOptions[0].text + ')';
+      const price = parseInt(document.getElementById('bc-price').textContent.replace(/[^0-9]/g, ''), 10);
+      addToBag(name, price);
+    }
+
+    // Cap Sizer
+    function updateCapSize() {
+      const cm = parseFloat(document.getElementById('head-slider').value);
+      const inches = (cm / 2.54).toFixed(1);
+      document.getElementById('cm-readout').textContent = `${cm} cm (${inches}")`;
+
+      let title = 'MEDIUM CAP (21.5" – 22")';
+      let desc = 'Fits 90% of queens! Includes adjustable elastic security band + combs for 100% glueless wear.';
+
+      if (cm < 54.5) {
+        title = 'PETITE / SMALL CAP (20.5" – 21.25")';
+        desc = 'Snug fit for smaller heads so your lace sits flat without bunching at the nape.';
+      } else if (cm > 57.5) {
+        title = 'LARGE CAP (22.5" – 23.5")';
+        desc = 'Extra roomy comfort cap with stretch lace so there is zero tightness or headaches.';
+      }
+
+      document.getElementById('cap-result-title').textContent = title;
+      document.getElementById('cap-result-desc').textContent = desc;
+    }
+
+    // Bag & Cart Management
+    let bag = [];
+
+    function addToBag(name, price) {
+      const existing = bag.find(i => i.name === name);
+      if (existing) existing.qty += 1;
+      else bag.push({ name, price, qty: 1 });
+      renderBag();
+      redirectToStorePage('cart');
+    }
+
+    function changeBagQty(idx, delta) {
+      if (!bag[idx]) return;
+      bag[idx].qty += delta;
+      if (bag[idx].qty <= 0) bag.splice(idx, 1);
+      renderBag();
+    }
+
+    function removeBagItem(idx) { bag.splice(idx, 1); renderBag(); }
+    function clearBag() { bag = []; renderBag(); }
+
+    function renderBag() {
+      const totalQty = bag.reduce((sum, i) => sum + i.qty, 0);
+      document.getElementById('nav-bag-count').textContent = totalQty;
+      document.querySelectorAll('.mob-cart-qty').forEach(el => { el.textContent = totalQty; });
+
+      const listEl = document.getElementById('bag-items-list');
+      const dedListEl = document.getElementById('dedicated-cart-list');
+
+      if (!bag.length) {
+        const emptyHtml = `<div class="cream-card border-dashed rounded-2xl p-6 text-center text-xs text-[#6b5344]">Your cart is empty. Open Human Hair, Brazilian Hair, Indian Hair, or Synthetic Hair to add items!</div>`;
+        listEl.innerHTML = emptyHtml;
+        if (dedListEl) dedListEl.innerHTML = emptyHtml;
+        document.getElementById('bag-total').textContent = 'R0';
+        const dedQty = document.getElementById('dedicated-cart-qty');
+        const dedTot = document.getElementById('dedicated-cart-total');
+        if (dedQty) dedQty.textContent = '0';
+        if (dedTot) dedTot.textContent = 'R0';
+        return;
+      }
+
+      let total = 0;
+      const html = bag.map((item, idx) => {
+        total += item.price * item.qty;
+        return `
+          <div class="flex items-center justify-between gap-3 cream-card p-3.5 rounded-xl">
+            <div>
+              <p class="text-sm font-bold text-[#2b1d14]">${item.name}</p>
+              <p class="text-xs text-[#8b5a2b] font-semibold">R${item.price.toLocaleString()} each</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button onclick="changeBagQty(${idx}, -1)" class="w-7 h-7 rounded-lg bg-[#efe6d8] border border-[#cfb99d] text-xs font-bold text-[#2b1d14]">−</button>
+              <span class="text-xs font-extrabold w-5 text-center text-[#2b1d14]">${item.qty}</span>
+              <button onclick="changeBagQty(${idx}, 1)" class="w-7 h-7 rounded-lg bg-[#efe6d8] border border-[#cfb99d] text-xs font-bold text-[#2b1d14]">+</button>
+              <button onclick="removeBagItem(${idx})" class="text-xs text-[#9e3b24] hover:underline ml-1 font-bold">✕</button>
             </div>
           </div>
         `;
       }).join('');
 
-      qtyEl.textContent = totalQty;
-      totalEl.textContent = `$${totalAmount}`;
+      listEl.innerHTML = html;
+      if (dedListEl) dedListEl.innerHTML = html;
+      document.getElementById('bag-total').textContent = `R${total.toLocaleString()}`;
+      const dedQty = document.getElementById('dedicated-cart-qty');
+      const dedTot = document.getElementById('dedicated-cart-total');
+      if (dedQty) dedQty.textContent = totalQty;
+      if (dedTot) dedTot.textContent = `R${total.toLocaleString()}`;
     }
 
-    function checkoutCartOnWhatsApp() {
-      if (!cart.length) {
-        alert('Your cart is empty. Add an item from a hair page first.');
-        return;
+    function checkoutWhatsApp() {
+      const name = document.getElementById('cust-name').value.trim() || 'Queen';
+      const town = document.getElementById('cust-town').value;
+      const notes = document.getElementById('cust-notes').value.trim();
+      const cap = document.getElementById('cap-result-title').textContent;
+      const cm = document.getElementById('cm-readout').textContent;
+
+      let msg = `Hello Kensani (Kayrique Luxe Hair Vault)! 👑✨\nMy name is *${name}*.\n*Delivery / Area:* ${town}\n*Cap Size:* ${cap} (${cm})\n\n`;
+
+      if (bag.length) {
+        let total = 0;
+        msg += `*My Cart Items:*\n`;
+        bag.forEach(i => {
+          total += i.price * i.qty;
+          msg += `• ${i.qty}x ${i.name} — R${(i.price * i.qty).toLocaleString()}\n`;
+        });
+        msg += `\n*Estimated Total:* R${total.toLocaleString()}\n`;
+      } else {
+        msg += `I'd like to inquire about a custom hair order!\n`;
       }
-      const name = document.getElementById('cart-customer-name').value.trim() || 'Customer';
-      const note = document.getElementById('cart-occasion-note').value.trim() || 'General Order';
 
-      let totalAmount = 0;
-      let lines = [
-        `Hello Kayrique-Luxe-Crown! 👑`,
-        `Name: ${name}`,
-        `Occasion/Note: ${note}`,
-        ``,
-        `Cart Items:`
-      ];
+      if (notes) msg += `*Notes:* ${notes}\n`;
 
-      cart.forEach(item => {
-        const lineTotal = item.price * item.qty;
-        totalAmount += lineTotal;
-        lines.push(`• [${item.category}] ${item.name} — ${item.inch}", ${item.color} × ${item.qty} ($${lineTotal})`);
-      });
-
-      lines.push(``);
-      lines.push(`Cart Total: $${totalAmount}`);
-
-      const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
-      window.open(url, '_blank', 'noopener');
+      const url = `https://wa.me/27672540468?text=${encodeURIComponent(msg)}`;
+      window.open(url, '_blank');
     }
 
-    // Separate Page Navigation (#home, #human-hair, #brazilian-hair, #indian-hair, #synthetic-hair, #cart)
-    const VALID_PAGES = ['home', 'human-hair', 'brazilian-hair', 'indian-hair', 'synthetic-hair', 'cart'];
-
-    function navigateTo(pageKey) {
-      const target = VALID_PAGES.includes(pageKey) ? pageKey : 'home';
-      document.querySelectorAll('.page-view').forEach(sec => sec.classList.remove('active'));
-      const activeSec = document.getElementById(`page-${target}`);
-      if (activeSec) activeSec.classList.add('active');
-
-      document.querySelectorAll('.nav-pill').forEach(btn => {
-        const isCurrent = btn.getAttribute('data-nav') === target;
-        btn.classList.toggle('bg-yellow-400', isCurrent);
-        btn.classList.toggle('text-slate-950', isCurrent);
-        btn.classList.toggle('font-extrabold', isCurrent);
-      });
-
-      if (window.location.hash !== `#${target}`) {
-        history.pushState(null, '', `#${target}`);
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    window.addEventListener('hashchange', () => {
-      const hashPage = window.location.hash.replace('#', '');
-      navigateTo(hashPage || 'home');
-    });
-
-    // Init
-    renderAllCategoryPages();
-    updateCartBadges();
-    renderCartPage();
-    const initialPage = window.location.hash.replace('#', '');
-    navigateTo(VALID_PAGES.includes(initialPage) ? initialPage : 'home');
+    // Initialize Everything
+    renderCategoryTabs();
+    renderCatalog();
+    updateStudio();
+    updateBundleCalc();
+    updateCapSize();
+    renderDedicatedSubPages();
+    renderBag();
+    applyStorePageView(getRequestedStorePage());
   </script>
 </body>
-                </html>
+  </html>
